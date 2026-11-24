@@ -1,0 +1,57 @@
+  <footer class="footer" id="about">
+    <div class="footer__inner container">
+      <div class="footer__top">
+        <section class="footer__brand" aria-labelledby="footer-about-title">
+          <a class="footer__logo logo logo--inverse" href="./index.html" aria-label="<%= t('header.logoLabel') %>" data-i18n-attr="aria-label:header.logoLabel">
+            <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+            <span class="logo__text">DevPath</span>
+          </a>
+          <h2 class="footer__about-title visually-hidden" id="footer-about-title" <%- i18n('footer.aboutTitle') %>><%= t('footer.aboutTitle') %></h2>
+          <p class="footer__text" <%- i18n('footer.about') %>><%= t('footer.about') %></p>
+        </section>
+
+        <nav class="footer__nav" aria-label="<%= t('footer.navLabel') %>" data-i18n-attr="aria-label:footer.navLabel">
+          <div class="footer__col">
+            <h2 class="footer__title" <%- i18n('footer.courses') %>><%= t('footer.courses') %></h2>
+            <ul class="footer__list">
+<% ['web-development', 'data-science', 'devops-cloud', 'ui-ux-design'].forEach((slug, i) => {
+     const names = ['Web Development', 'Data Science', 'DevOps & Cloud', 'UI/UX Design']; %>
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=<%= slug %>"><%= names[i] %></a></li>
+<% }) %>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2 class="footer__title" <%- i18n('footer.company') %>><%= t('footer.company') %></h2>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="#about" <%- i18n('footer.aboutUs') %>><%= t('footer.aboutUs') %></a></li>
+              <li class="footer__item"><a class="footer__link" href="./course.html?id=1#instructor" <%- i18n('nav.instructors') %>><%= t('nav.instructors') %></a></li>
+              <li class="footer__item"><a class="footer__link" href="./courses.html" <%- i18n('footer.allCourses') %>><%= t('footer.allCourses') %></a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html" <%- i18n('footer.enroll') %>><%= t('footer.enroll') %></a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2 class="footer__title" <%- i18n('footer.support') %>><%= t('footer.support') %></h2>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="mailto:support@devpath.example" <%- i18n('footer.contact') %>><%= t('footer.contact') %></a></li>
+              <li class="footer__item"><a class="footer__link" href="./course.html?id=1#guarantee" <%- i18n('footer.guarantee') %>><%= t('footer.guarantee') %></a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html#terms" <%- i18n('footer.terms') %>><%= t('footer.terms') %></a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html#terms" <%- i18n('footer.privacy') %>><%= t('footer.privacy') %></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright"><small><%= t('footer.copyright') %></small></p>
+        <p class="footer__locale">
+          <span class="footer__lang" <%- i18n('footer.language') %>><%= t('footer.language') %></span>
+          <span aria-hidden="true">·</span>
+          <abbr class="footer__currency" title="<%= t('footer.currencyTitle') %>" data-i18n-attr="title:footer.currencyTitle">USD</abbr>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

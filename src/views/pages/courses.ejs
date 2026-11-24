@@ -1,0 +1,129 @@
+<%- include('../partials/head') %>
+  <main class="main" id="main" tabindex="-1">
+
+    <header class="page-head">
+      <div class="page-head__inner container">
+        <%- include('../partials/breadcrumbs', { items: [
+          { label: t('nav.home'), key: 'nav.home', href: './index.html' },
+          { label: t('nav.courses'), key: 'nav.courses' }
+        ] }) %>
+        <h1 class="page-head__title" <%- i18n('courses.title') %>><%= t('courses.title') %></h1>
+        <p class="page-head__lead" <%- i18n('courses.lead') %>><%= t('courses.lead') %></p>
+      </div>
+    </header>
+
+    <div class="catalog container">
+
+      <aside class="catalog__filters filters" id="filters" aria-labelledby="filters-title">
+        <h2 class="filters__title" id="filters-title" <%- i18n('filters.title') %>><%= t('filters.title') %></h2>
+        <form class="filters__form" action="./courses.html" method="get">
+          <fieldset class="filters__group">
+            <legend class="filters__legend" <%- i18n('filters.category') %>><%= t('filters.category') %></legend>
+<% categories.forEach((category, i) => { %>
+            <div class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="category-<%= category.slug %>" name="category" value="<%= category.slug %>"<%= i === 0 ? ' checked' : '' %> />
+              <label class="checkbox__label" for="category-<%= category.slug %>"><%= category.name %></label>
+            </div>
+<% }) %>
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend class="filters__legend" <%- i18n('filters.level') %>><%= t('filters.level') %></legend>
+            <div class="filters__chips">
+<% ['beginner', 'intermediate', 'advanced'].forEach((level, i) => { %>
+              <div class="chip">
+                <input class="chip__input" type="checkbox" id="level-<%= level %>" name="level" value="<%= level %>"<%= i === 0 ? ' checked' : '' %> />
+                <label class="chip__label" for="level-<%= level %>" <%- i18n(`level.${level}`) %>><%= t(`level.${level}`) %></label>
+              </div>
+<% }) %>
+            </div>
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend class="filters__legend" <%- i18n('filters.price') %>><%= t('filters.price') %></legend>
+<% ['free', 'paid'].forEach((price) => { %>
+            <div class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="price-<%= price %>" name="price" value="<%= price %>"<%= price === 'paid' ? ' checked' : '' %> />
+              <label class="checkbox__label" for="price-<%= price %>" <%- i18n(`filters.${price}`) %>><%= t(`filters.${price}`) %></label>
+            </div>
+<% }) %>
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend class="filters__legend" <%- i18n('filters.rating') %>><%= t('filters.rating') %></legend>
+<% ['4.5', '4.0'].forEach((rating, i) => { %>
+            <div class="radio">
+              <input class="radio__input" type="radio" id="rating-<%= rating.replace('.', '') %>" name="rating" value="<%= rating %>"<%= i === 0 ? ' checked' : '' %> />
+              <label class="radio__label" for="rating-<%= rating.replace('.', '') %>">
+                <span aria-hidden="true">★</span> <%= rating %> <span <%- i18n('filters.andUp') %>><%= t('filters.andUp') %></span>
+              </label>
+            </div>
+<% }) %>
+          </fieldset>
+
+          <div class="filters__actions">
+            <button class="filters__apply button button--primary" type="submit" <%- i18n('filters.apply') %>><%= t('filters.apply') %></button>
+            <button class="filters__reset button button--secondary" type="reset" <%- i18n('filters.reset') %>><%= t('filters.reset') %></button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="catalog__results results" aria-labelledby="results-title">
+        <h2 class="results__title visually-hidden" id="results-title" <%- i18n('courses.resultsTitle') %>><%= t('courses.resultsTitle') %></h2>
+
+        <form class="results__toolbar toolbar" role="search" action="./courses.html" method="get">
+          <div class="toolbar__search">
+            <label class="toolbar__label visually-hidden" for="catalog-search" <%- i18n('search.label') %>><%= t('search.label') %></label>
+            <input class="toolbar__input input" id="catalog-search" name="q" type="search"
+                   placeholder="<%= t('search.placeholder') %>" data-i18n-attr="placeholder:search.placeholder" />
+          </div>
+          <button class="toolbar__filters-toggle button button--secondary" type="button"
+                  aria-controls="filters" aria-expanded="false" <%- i18n('filters.toggle') %>><%= t('filters.toggle') %></button>
+          <div class="toolbar__sort">
+            <label class="toolbar__label" for="catalog-sort" <%- i18n('sort.label') %>><%= t('sort.label') %></label>
+            <select class="toolbar__select select" id="catalog-sort" name="sort">
+<% ['popular', 'rating', 'newest', 'price-asc', 'price-desc'].forEach((value, i) => { %>
+              <option value="<%= value %>"<%= i === 0 ? ' selected' : '' %> <%- i18n(`sort.${value}`) %>><%= t(`sort.${value}`) %></option>
+<% }) %>
+            </select>
+          </div>
+          <button class="toolbar__submit button button--primary" type="submit" <%- i18n('search.short') %>><%= t('search.short') %></button>
+        </form>
+
+        <p class="results__count" role="status" aria-live="polite" <%- i18n('courses.count') %> data-i18n-args='{"from":1,"to":<%= courses.length %>,"total":48}'>
+          <%= t('courses.count').replace('{from}', 1).replace('{to}', courses.length).replace('{total}', 48) %>
+        </p>
+
+        <ul class="results__list course-list course-list--grid" role="list">
+<% courses.forEach((course) => { %>
+          <li class="course-list__item">
+            <%- include('../partials/course-card', { course, sizes: '(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw' }) %>
+          </li>
+<% }) %>
+        </ul>
+
+        <nav class="results__pagination pagination" aria-label="<%= t('pagination.label') %>" data-i18n-attr="aria-label:pagination.label">
+          <ul class="pagination__list">
+            <li class="pagination__item">
+              <span class="pagination__link pagination__link--prev pagination__link--disabled" aria-disabled="true">
+                <span aria-hidden="true">‹</span> <span <%- i18n('pagination.prev') %>><%= t('pagination.prev') %></span>
+              </span>
+            </li>
+            <li class="pagination__item"><a class="pagination__link pagination__link--active" href="./courses.html?page=1" aria-current="page" aria-label="<%= t('pagination.page') %> 1">1</a></li>
+<% [2, 3].forEach((n) => { %>
+            <li class="pagination__item"><a class="pagination__link" href="./courses.html?page=<%= n %>" aria-label="<%= t('pagination.page') %> <%= n %>"><%= n %></a></li>
+<% }) %>
+            <li class="pagination__item pagination__item--gap" aria-hidden="true">…</li>
+            <li class="pagination__item"><a class="pagination__link" href="./courses.html?page=8" aria-label="<%= t('pagination.page') %> 8">8</a></li>
+            <li class="pagination__item">
+              <a class="pagination__link pagination__link--next" href="./courses.html?page=2" rel="next">
+                <span <%- i18n('pagination.next') %>><%= t('pagination.next') %></span> <span aria-hidden="true">›</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+
+  </main>
+<%- include('../partials/footer') %>

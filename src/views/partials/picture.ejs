@@ -1,0 +1,7 @@
+<% const lazy = locals.lazy !== false;
+   const set = (ext) => widths.map((w) => `${img(name)}-${w}.${ext} ${w}w`).join(', '); %>
+<picture class="<%= className %>">
+  <source type="image/webp" srcset="<%= set('webp') %>" sizes="<%= sizes %>" />
+  <img class="<%= className %>-img" src="<%= img(name) %>-<%= widths[0] %>.jpg" srcset="<%= set('jpg') %>" sizes="<%= sizes %>"
+       width="<%= size[0] %>" height="<%= size[1] %>" alt="<%= alt %>"<%- lazy ? ' loading="lazy" decoding="async"' : ' fetchpriority="high"' %> />
+</picture>

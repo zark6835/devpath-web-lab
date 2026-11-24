@@ -1,0 +1,31 @@
+<% const h = locals.headingLevel || 3;
+   const url = `./course.html?id=${course.id}`; %>
+<article class="course-card" data-course-id="<%= course.id %>" aria-labelledby="course-card-title-<%= course.id %><%= locals.idSuffix || '' %>">
+  <%- include('picture', {
+    name: `courses/${course.slug}`, widths: [400, 800], size: [400, 185], sizes,
+    alt: t('card.coverAlt').replace('{label}', course.thumbLabel),
+    className: 'course-card__thumb'
+  }) %>
+  <div class="course-card__body">
+    <p class="course-card__tag tag"><%= course.category.name %></p>
+    <h<%= h %> class="course-card__title" id="course-card-title-<%= course.id %><%= locals.idSuffix || '' %>"><%= course.title %></h<%= h %>>
+    <p class="course-card__meta">
+      <span class="course-card__author"><%= course.instructor.name %></span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons"><%= course.lessons %> <span <%- i18n('card.lessons') %>><%= t('card.lessons') %></span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT<%= course.hours %>H"><%= course.hours %>h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="<%= t('card.ratingLabel').replace('{value}', course.rating) %>">★★★★★</span>
+      <strong class="rating__value"><%= course.rating %></strong>
+      <span class="rating__count">(<%= number(course.reviewsCount) %><span class="visually-hidden"> <%= t('card.reviews') %></span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="<%= course.price %>"><%= money(course.price) %></data></p>
+      <a class="course-card__link link-arrow" href="<%= url %>" aria-describedby="course-card-title-<%= course.id %><%= locals.idSuffix || '' %>">
+        <span <%- i18n('card.details') %>><%= t('card.details') %></span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>

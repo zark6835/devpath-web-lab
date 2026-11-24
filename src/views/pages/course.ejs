@@ -1,0 +1,180 @@
+<%- include('../partials/head') %>
+<% const c = course; const discount = Math.round((1 - c.price / c.oldPrice) * 100);
+   const iso = (d) => d.replace(/^PT/, '').toLowerCase().replace('h', 'h ').replace('m', 'm').trim(); %>
+  <main class="main" id="main" tabindex="-1">
+
+        <article class="course" itemscope itemtype="https://schema.org/Course">
+      <meta itemprop="courseCode" content="DP-<%= String(c.id).padStart(3, '0') %>" />
+      <meta itemprop="inLanguage" content="en" />
+      <meta itemprop="educationalLevel" content="<%= t(`level.${c.level}`) %>" />
+
+      <section class="course-hero" aria-labelledby="course-title">
+        <div class="course-hero__inner container">
+          <div class="course-hero__info">
+            <%- include('../partials/breadcrumbs', { className: 'breadcrumbs--inverse', items: [
+              { label: t('nav.home'), key: 'nav.home', href: './index.html' },
+              { label: t('nav.courses'), key: 'nav.courses', href: './courses.html' },
+              { label: c.category.name, href: `./courses.html?category=${c.category.slug}` },
+              { label: 'Modern JavaScript' }
+            ] }) %>
+            <p class="course-hero__badge badge badge--primary"><%= c.category.name %></p>
+            <h1 class="course-hero__title" id="course-title" itemprop="name"><%= c.title %></h1>
+            <p class="course-hero__lead" itemprop="description"><%= c.description %></p>
+
+            <ul class="course-hero__meta meta" role="list">
+              <li class="meta__item meta__item--rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                <span aria-hidden="true">★</span>
+                <span itemprop="ratingValue"><%= c.rating %></span><span class="visually-hidden"> <%= t('course.outOf') %></span>
+                <meta itemprop="bestRating" content="5" />
+                <meta itemprop="reviewCount" content="<%= c.reviewsCount %>" />
+              </li>
+              <li class="meta__item"><%= number(c.reviewsCount) %> <span <%- i18n('course.reviews') %>><%= t('course.reviews') %></span></li>
+              <li class="meta__item"><%= number(c.students) %> <span <%- i18n('course.students') %>><%= t('course.students') %></span></li>
+              <li class="meta__item"><span <%- i18n('course.updated') %>><%= t('course.updated') %></span> <time datetime="<%= c.updated %>" itemprop="dateModified">Oct 2026</time></li>
+              <li class="meta__item"><%= c.language %></li>
+            </ul>
+
+            <div class="course-hero__author author">
+              <span class="author__avatar" aria-hidden="true"><%= c.instructor.initials %></span>
+              <p class="author__text">
+                <span class="author__caption" <%- i18n('course.createdBy') %>><%= t('course.createdBy') %></span>
+                <a class="author__name" href="#instructor"><%= c.instructor.name %></a>, <%= c.instructor.role %>
+              </p>
+            </div>
+          </div>
+
+          <aside class="course-hero__purchase purchase" aria-labelledby="purchase-title"
+                 itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <h2 class="purchase__title visually-hidden" id="purchase-title" <%- i18n('course.purchaseTitle') %>><%= t('course.purchaseTitle') %></h2>
+            <%- include('../partials/picture', {
+              name: `courses/${c.slug}`, widths: [400, 800], size: [400, 185],
+              sizes: '(min-width: 1280px) 320px, calc(100vw - 80px)',
+              alt: t('course.previewAlt'), className: 'purchase__preview', lazy: false
+            }) %>
+            <p class="purchase__price price price--large">
+              <meta itemprop="priceCurrency" content="USD" />
+              <meta itemprop="category" content="Paid" />
+              <link itemprop="availability" href="https://schema.org/InStock" />
+              <data class="price__current" value="<%= c.price %>" itemprop="price"><%= money(c.price) %></data>
+              <del class="price__old"><span class="visually-hidden" <%- i18n('course.oldPrice') %>><%= t('course.oldPrice') %> </span><%= money(c.oldPrice) %></del>
+              <span class="price__badge badge badge--accent"><%= discount %>% <span <%- i18n('course.off') %>><%= t('course.off') %></span></span>
+            </p>
+            <a class="purchase__enroll button button--primary button--block" href="./enroll.html?course=<%= c.id %>" <%- i18n('course.enroll') %>><%= t('course.enroll') %></a>
+            <button class="purchase__wishlist button button--secondary button--block" type="button" aria-pressed="false" <%- i18n('course.wishlist') %>><%= t('course.wishlist') %></button>
+            <p class="purchase__guarantee" id="guarantee" <%- i18n('course.guarantee') %>><%= t('course.guarantee') %></p>
+            <hr class="purchase__divider" />
+            <h3 class="purchase__includes-title" <%- i18n('course.includes') %>><%= t('course.includes') %></h3>
+            <ul class="purchase__includes checklist" role="list">
+              <li class="checklist__item"><%= c.hours %> <span <%- i18n('course.inc.video') %>><%= t('course.inc.video') %></span></li>
+              <li class="checklist__item"><%= c.exercises %> <span <%- i18n('course.inc.exercises') %>><%= t('course.inc.exercises') %></span></li>
+              <li class="checklist__item"><%= c.projects %> <span <%- i18n('course.inc.projects') %>><%= t('course.inc.projects') %></span></li>
+              <li class="checklist__item" <%- i18n('course.inc.certificate') %>><%= t('course.inc.certificate') %></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <div class="course__body container">
+        <div class="course__main">
+
+          <section class="course__section outcomes" aria-labelledby="outcomes-title">
+            <h2 class="outcomes__title" id="outcomes-title" <%- i18n('course.learnTitle') %>><%= t('course.learnTitle') %></h2>
+            <ul class="outcomes__list checklist" role="list">
+<% c.outcomes.forEach((item) => { %>
+              <li class="outcomes__item checklist__item" itemprop="teaches"><%= item %></li>
+<% }) %>
+            </ul>
+          </section>
+
+          <section class="course__section curriculum" aria-labelledby="curriculum-title">
+            <h2 class="curriculum__title" id="curriculum-title" <%- i18n('course.contentTitle') %>><%= t('course.contentTitle') %></h2>
+            <p class="curriculum__summary">
+              <%= modules.length %> <span <%- i18n('course.sections') %>><%= t('course.sections') %></span> ·
+              <%= c.lessons %> <span <%- i18n('card.lessons') %>><%= t('card.lessons') %></span> ·
+              <time datetime="PT42H30M">42h 30m</time> <span <%- i18n('course.totalLength') %>><%= t('course.totalLength') %></span>
+            </p>
+            <ol class="curriculum__list" role="list">
+<% modules.forEach((m) => { %>
+              <li class="curriculum__item">
+                <details class="module" itemprop="syllabusSections" itemscope itemtype="https://schema.org/Syllabus">
+                  <summary class="module__summary">
+                    <span class="module__number" aria-hidden="true"><%= String(m.position).padStart(2, '0') %></span>
+                    <span class="module__text">
+                      <span class="module__title" itemprop="name"><%= m.title %></span>
+                      <span class="module__info"><%= m.lessons %> <span <%- i18n('card.lessons') %>><%= t('card.lessons') %></span> · <time datetime="<%= m.duration %>" itemprop="timeRequired"><%= iso(m.duration) %></time></span>
+                    </span>
+                    <span class="module__toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <ul class="module__topics" itemprop="description">
+<% m.topics.forEach((topic) => { %>
+                    <li class="module__topic"><%= topic %></li>
+<% }) %>
+                  </ul>
+                </details>
+              </li>
+<% }) %>
+            </ol>
+          </section>
+
+          <section class="course__section instructor" id="instructor" aria-labelledby="instructor-title">
+            <h2 class="instructor__heading" id="instructor-title" <%- i18n('course.instructorTitle') %>><%= t('course.instructorTitle') %></h2>
+            <article class="instructor__card" itemprop="instructor" itemscope itemtype="https://schema.org/Person">
+              <%- include('../partials/picture', {
+                name: `avatars/${c.instructor.avatar}`, widths: [80, 160], size: [80, 80], sizes: '72px',
+                alt: t('course.instructorPhotoAlt').replace('{name}', c.instructor.name), className: 'instructor__avatar'
+              }) %>
+              <div class="instructor__bio">
+                <h3 class="instructor__name" itemprop="name"><%= c.instructor.name %></h3>
+                <p class="instructor__role"><span itemprop="jobTitle"><%= c.instructor.role %></span> · <%= c.instructor.experienceYears %> <span <%- i18n('course.yearsExp') %>><%= t('course.yearsExp') %></span></p>
+                <p class="instructor__text" itemprop="description"><%= c.instructor.bio %></p>
+              </div>
+            </article>
+          </section>
+
+          <section class="course__section reviews" aria-labelledby="reviews-title">
+            <h2 class="reviews__title" id="reviews-title" <%- i18n('course.reviewsTitle') %>><%= t('course.reviewsTitle') %></h2>
+            <ul class="reviews__list" role="list">
+<% reviews.forEach((r) => { %>
+              <li class="reviews__item">
+                <article class="review" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                  <p class="review__rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                    <span class="rating__stars" role="img" aria-label="<%= t('card.ratingLabel').replace('{value}', r.rating) %>">★★★★★</span>
+                    <meta itemprop="ratingValue" content="<%= r.rating %>" />
+                    <meta itemprop="bestRating" content="5" />
+                  </p>
+                  <blockquote class="review__text" itemprop="reviewBody"><p><%= r.text %></p></blockquote>
+                  <footer class="review__footer">
+                    <span class="review__author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name"><%= r.author %></span></span>
+                    <span aria-hidden="true">·</span>
+                    <time class="review__date" datetime="<%= r.date %>" itemprop="datePublished"><%= new Date(r.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) %></time>
+                  </footer>
+                </article>
+              </li>
+<% }) %>
+            </ul>
+          </section>
+        </div>
+
+        <aside class="course__related related" aria-labelledby="related-title">
+          <h2 class="related__title" id="related-title" <%- i18n('course.relatedTitle') %>><%= t('course.relatedTitle') %></h2>
+          <ul class="related__list course-list" role="list">
+<% related.forEach((rc) => { %>
+            <li class="course-list__item">
+              <%- include('../partials/course-card', { course: rc, sizes: '(min-width: 1280px) 368px, 100vw' }) %>
+            </li>
+<% }) %>
+          </ul>
+        </aside>
+      </div>
+
+      <div hidden itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="DevPath" />
+      </div>
+      <div hidden itemprop="hasCourseInstance" itemscope itemtype="https://schema.org/CourseInstance">
+        <meta itemprop="courseMode" content="online" />
+        <meta itemprop="courseWorkload" content="PT<%= c.hours %>H" />
+      </div>
+    </article>
+
+  </main>
+<%- include('../partials/footer') %>

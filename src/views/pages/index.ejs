@@ -1,0 +1,122 @@
+<%- include('../partials/head') %>
+  <main class="main" id="main" tabindex="-1">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <p class="hero__badge badge badge--accent">
+            <span aria-hidden="true">★</span> <span <%- i18n('home.hero.badge') %>><%= t('home.hero.badge') %></span>
+          </p>
+          <h1 class="hero__title" id="hero-title" <%- i18n('home.hero.title') %>><%= t('home.hero.title') %></h1>
+          <p class="hero__lead" <%- i18n('home.hero.lead') %>><%= t('home.hero.lead') %></p>
+
+          <form class="hero__search search-form" role="search" action="./courses.html" method="get">
+            <label class="search-form__label visually-hidden" for="hero-search" <%- i18n('search.label') %>><%= t('search.label') %></label>
+            <input class="search-form__input input" id="hero-search" name="q" type="search"
+                   placeholder="<%= t('search.placeholderHome') %>" data-i18n-attr="placeholder:search.placeholderHome"
+                   autocomplete="off" />
+            <button class="search-form__button button button--primary" type="submit" <%- i18n('search.submit') %>><%= t('search.submit') %></button>
+          </form>
+
+          <dl class="hero__stats stats">
+            <div class="stats__item">
+              <dt class="stats__label" <%- i18n('home.stats.courses') %>><%= t('home.stats.courses') %></dt>
+              <dd class="stats__value">120+</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label" <%- i18n('home.stats.instructors') %>><%= t('home.stats.instructors') %></dt>
+              <dd class="stats__value">45</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label" <%- i18n('home.stats.students') %>><%= t('home.stats.students') %></dt>
+              <dd class="stats__value"><abbr title="18,000">18k</abbr></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__visual">
+          <picture class="hero__picture">
+            <source media="(max-width: 767px)" type="image/webp"
+                    srcset="<%= img('hero/hero-mobile') %>-328.webp 328w, <%= img('hero/hero-mobile') %>-656.webp 656w"
+                    sizes="calc(100vw - 32px)" />
+            <source media="(max-width: 767px)"
+                    srcset="<%= img('hero/hero-mobile') %>-328.jpg 328w, <%= img('hero/hero-mobile') %>-656.jpg 656w"
+                    sizes="calc(100vw - 32px)" />
+            <source type="image/webp"
+                    srcset="<%= img('hero/hero-desktop') %>-564.webp 564w, <%= img('hero/hero-desktop') %>-1128.webp 1128w"
+                    sizes="(min-width: 1280px) 564px, 50vw" />
+            <img class="hero__picture-img" src="<%= img('hero/hero-desktop') %>-564.jpg"
+                 srcset="<%= img('hero/hero-desktop') %>-564.jpg 564w, <%= img('hero/hero-desktop') %>-1128.jpg 1128w"
+                 sizes="(min-width: 1280px) 564px, 50vw"
+                 width="564" height="440" fetchpriority="high"
+                 alt="<%= t('home.hero.imageAlt') %>" data-i18n-attr="alt:home.hero.imageAlt" />
+          </picture>
+
+          <aside class="hero__progress progress-card" aria-labelledby="progress-card-title">
+            <p class="progress-card__eyebrow" <%- i18n('home.progress.eyebrow') %>><%= t('home.progress.eyebrow') %></p>
+            <h2 class="progress-card__title" id="progress-card-title">Async JavaScript &amp; Promises</h2>
+            <progress class="progress-card__bar" max="100" value="68" aria-labelledby="progress-card-title">68%</progress>
+            <p class="progress-card__text">
+              <span <%- i18n('home.progress.complete') %> data-i18n-args='{"value":68}'><%= t('home.progress.complete').replace('{value}', 68) %></span>
+              <span aria-hidden="true">·</span>
+              <span <%- i18n('home.progress.left') %> data-i18n-args='{"value":12}'><%= t('home.progress.left').replace('{value}', 12) %></span>
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories section" aria-labelledby="categories-title">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title" id="categories-title" <%- i18n('home.categories.title') %>><%= t('home.categories.title') %></h2>
+          <a class="section__link link-arrow" href="./courses.html">
+            <span <%- i18n('home.categories.all') %>><%= t('home.categories.all') %></span> <span aria-hidden="true">→</span>
+          </a>
+        </header>
+        <ul class="categories__list" role="list">
+<% categories.forEach((category) => { %>
+          <li class="categories__item">
+            <a class="category-card" href="./courses.html?category=<%= category.slug %>">
+              <span class="category-card__icon" aria-hidden="true"><%= category.icon %></span>
+              <h3 class="category-card__name"><%= category.name %></h3>
+              <p class="category-card__count"><%= category.coursesCount %> <span <%- i18n('common.courses') %>><%= t('common.courses') %></span></p>
+            </a>
+          </li>
+<% }) %>
+        </ul>
+      </div>
+    </section>
+
+    <section class="popular section" aria-labelledby="popular-title">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title" id="popular-title" <%- i18n('home.popular.title') %>><%= t('home.popular.title') %></h2>
+          <a class="section__link link-arrow" href="./courses.html">
+            <span <%- i18n('home.popular.all') %>><%= t('home.popular.all') %></span> <span aria-hidden="true">→</span>
+          </a>
+        </header>
+        <ul class="popular__list course-list" role="list">
+<% popular.forEach((course) => { %>
+          <li class="course-list__item">
+            <%- include('../partials/course-card', { course, sizes: '(min-width: 1280px) 368px, (min-width: 768px) 50vw, 100vw' }) %>
+          </li>
+<% }) %>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta__banner">
+          <div class="cta__text">
+            <h2 class="cta__title" id="cta-title" <%- i18n('home.cta.title') %>><%= t('home.cta.title') %></h2>
+            <p class="cta__lead" <%- i18n('home.cta.lead') %>><%= t('home.cta.lead') %></p>
+          </div>
+          <button class="cta__button button button--secondary" type="button" aria-haspopup="dialog" <%- i18n('home.cta.button') %>><%= t('home.cta.button') %></button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+<%- include('../partials/footer') %>

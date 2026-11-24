@@ -1,0 +1,39 @@
+  <header class="header">
+    <div class="header__inner container">
+      <a class="header__logo logo" href="./index.html" aria-label="<%= t('header.logoLabel') %>" data-i18n-attr="aria-label:header.logoLabel">
+        <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+        <span class="logo__text">DevPath</span>
+      </a>
+
+      <button class="header__burger burger" type="button"
+              aria-controls="main-nav" aria-expanded="false"
+              aria-label="<%= t('header.menuOpen') %>" data-i18n-attr="aria-label:header.menuOpen">
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
+
+      <nav class="header__nav nav" id="main-nav" aria-label="<%= t('nav.label') %>" data-i18n-attr="aria-label:nav.label">
+        <ul class="nav__list">
+<% const navItems = [
+     { key: 'nav.home', href: './index.html', page: 'home' },
+     { key: 'nav.courses', href: './courses.html', page: 'courses', also: ['course', 'enroll'] },
+     { key: 'nav.instructors', href: './course.html?id=1#instructor', page: 'instructors' },
+     { key: 'nav.about', href: '#about', page: 'about' }
+   ];
+   navItems.forEach((item) => {
+     const current = item.page === page;
+     const section = !current && (item.also || []).includes(page); %>
+          <li class="nav__item">
+            <a class="nav__link<%= current || section ? ' nav__link--active' : '' %>" href="<%= item.href %>"<%- current ? ' aria-current="page"' : '' %> <%- i18n(item.key) %>><%= t(item.key) %></a>
+          </li>
+<% }) %>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="button button--secondary header__login" type="button" <%- i18n('header.login') %>><%= t('header.login') %></button>
+        <a class="button button--primary header__signup" href="./enroll.html" <%- i18n('header.signup') %>><%= t('header.signup') %></a>
+      </div>
+    </div>
+  </header>

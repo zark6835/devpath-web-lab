@@ -1,0 +1,14 @@
+<nav class="breadcrumbs <%= locals.className || '' %>" aria-label="<%= t('a11y.breadcrumbs') %>" data-i18n-attr="aria-label:a11y.breadcrumbs">
+  <ol class="breadcrumbs__list">
+<% items.forEach((item, i) => { const last = i === items.length - 1; %>
+    <li class="breadcrumbs__item">
+<% if (last) { %>
+      <span class="breadcrumbs__current" aria-current="page" <%- item.key ? i18n(item.key) : "" %>><%= item.label %></span>
+<% } else { %>
+      <a class="breadcrumbs__link" href="<%= item.href %>" <%- item.key ? i18n(item.key) : "" %>><%= item.label %></a>
+      <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+<% } %>
+    </li>
+<% }) %>
+  </ol>
+</nav>

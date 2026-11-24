@@ -1,0 +1,144 @@
+<%- include('../partials/head') %>
+<% const c = course; const selected = plans[0]; %>
+  <main class="main" id="main" tabindex="-1">
+
+    <header class="page-head">
+      <div class="page-head__inner container">
+        <%- include('../partials/breadcrumbs', { items: [
+          { label: t('nav.home'), key: 'nav.home', href: './index.html' },
+          { label: t('nav.courses'), key: 'nav.courses', href: './courses.html' },
+          { label: 'Modern JavaScript', href: `./course.html?id=${c.id}` },
+          { label: t('enroll.crumb'), key: 'enroll.crumb' }
+        ] }) %>
+        <h1 class="page-head__title" <%- i18n('enroll.title') %>><%= t('enroll.title') %></h1>
+        <p class="page-head__lead" <%- i18n('enroll.lead') %>><%= t('enroll.lead') %></p>
+
+        <h2 class="visually-hidden" <%- i18n('enroll.stepsLabel') %>><%= t('enroll.stepsLabel') %></h2>
+        <ol class="page-head__steps steps">
+<% ['details', 'plan', 'confirmation'].forEach((step, i) => { %>
+          <li class="steps__item<%= i === 0 ? ' steps__item--current' : '' %>"<%- i === 0 ? ' aria-current="step"' : '' %>>
+            <span class="steps__number" aria-hidden="true"><%= i + 1 %></span>
+            <span class="steps__label" <%- i18n(`enroll.steps.${step}`) %>><%= t(`enroll.steps.${step}`) %></span>
+          </li>
+<% }) %>
+        </ol>
+      </div>
+    </header>
+
+    <div class="enroll container">
+      <section class="enroll__form-wrap" aria-labelledby="enroll-form-title">
+        <h2 class="visually-hidden" id="enroll-form-title" <%- i18n('enroll.formTitle') %>><%= t('enroll.formTitle') %></h2>
+
+        <form class="enroll-form" id="enroll-form" action="./enroll.html" method="get" autocomplete="on">
+          <input type="hidden" name="course" value="<%= c.id %>" />
+
+          <fieldset class="enroll-form__group">
+            <legend class="enroll-form__legend" <%- i18n('enroll.personal') %>><%= t('enroll.personal') %></legend>
+
+            <div class="enroll-form__row">
+              <div class="field">
+                <label class="field__label" for="first-name" <%- i18n('enroll.firstName') %>><%= t('enroll.firstName') %></label>
+                <input class="field__input input" id="first-name" name="firstName" type="text"
+                       autocomplete="given-name" required placeholder="Anna" />
+              </div>
+              <div class="field">
+                <label class="field__label" for="last-name" <%- i18n('enroll.lastName') %>><%= t('enroll.lastName') %></label>
+                <input class="field__input input" id="last-name" name="lastName" type="text"
+                       autocomplete="family-name" required placeholder="Kovalenko" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="email" <%- i18n('enroll.email') %>><%= t('enroll.email') %></label>
+              <input class="field__input input" id="email" name="email" type="email" autocomplete="email"
+                     required placeholder="you@example.com" aria-describedby="email-hint" />
+              <p class="field__hint" id="email-hint" <%- i18n('enroll.emailHint') %>><%= t('enroll.emailHint') %></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="phone" <%- i18n('enroll.phone') %>><%= t('enroll.phone') %></label>
+              <input class="field__input input" id="phone" name="phone" type="tel" autocomplete="tel"
+                     inputmode="tel" pattern="\+?[0-9 ]{10,16}" placeholder="+380 XX XXX XX XX" />
+            </div>
+          </fieldset>
+
+          <fieldset class="enroll-form__group plans">
+            <legend class="enroll-form__legend" <%- i18n('enroll.choosePlan') %>><%= t('enroll.choosePlan') %></legend>
+            <div class="plans__list">
+<% plans.forEach((plan, i) => { %>
+              <div class="plan-option">
+                <input class="plan-option__input" type="radio" id="plan-<%= plan.id %>" name="plan" value="<%= plan.id %>"
+                       aria-describedby="plan-<%= plan.id %>-desc"<%= i === 0 ? ' checked' : '' %> required />
+                <label class="plan-option__label" for="plan-<%= plan.id %>">
+                  <span class="plan-option__name" <%- i18n(`enroll.plans.${plan.id}`) %>><%= plan.name %></span>
+                  <data class="plan-option__price" value="<%= plan.price %>"><%= money(plan.price) %></data>
+                </label>
+                <p class="plan-option__desc" id="plan-<%= plan.id %>-desc" <%- i18n(`enroll.plans.${plan.id}Desc`) %>><%= plan.description %></p>
+              </div>
+<% }) %>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label class="field__label" for="promo" <%- i18n('enroll.promo') %>><%= t('enroll.promo') %></label>
+            <input class="field__input input" id="promo" name="promo" type="text" autocomplete="off"
+                   spellcheck="false" aria-describedby="promo-error" placeholder="SPRING2026" />
+            <p class="field__error" id="promo-error" role="alert" hidden <%- i18n('enroll.promoError') %>><%= t('enroll.promoError') %></p>
+          </div>
+
+          <div class="checkbox enroll-form__terms">
+            <input class="checkbox__input" type="checkbox" id="terms" name="terms" value="accepted" required />
+            <label class="checkbox__label" for="terms" <%- i18n('enroll.terms') %>><%= t('enroll.terms') %></label>
+          </div>
+
+          <div class="enroll-form__actions">
+            <button class="button button--primary" type="submit" <%- i18n('enroll.submit') %>><%= t('enroll.submit') %></button>
+            <a class="button button--secondary" href="./course.html?id=<%= c.id %>" <%- i18n('enroll.back') %>><%= t('enroll.back') %></a>
+          </div>
+        </form>
+      </section>
+
+      <aside class="enroll__summary summary" aria-labelledby="summary-title">
+        <h2 class="summary__title" id="summary-title" <%- i18n('enroll.summary') %>><%= t('enroll.summary') %></h2>
+
+        <figure class="summary__course">
+          <%- include('../partials/picture', {
+            name: `courses/${c.slug}`, widths: [400, 800], size: [400, 185], sizes: '64px',
+            alt: t('card.coverAlt').replace('{label}', c.thumbLabel), className: 'summary__thumb', lazy: false
+          }) %>
+          <figcaption class="summary__caption">
+            <a class="summary__course-title" href="./course.html?id=<%= c.id %>"><%= c.title %></a>
+            <span class="summary__author"><%= c.instructor.name %></span>
+          </figcaption>
+        </figure>
+
+        <table class="summary__table">
+          <caption class="visually-hidden" <%- i18n('enroll.summaryCaption') %>><%= t('enroll.summaryCaption') %></caption>
+          <tbody>
+            <tr>
+              <th scope="row" <%- i18n('enroll.coursePrice') %>><%= t('enroll.coursePrice') %></th>
+              <td><data value="<%= c.price %>">$<%= c.price.toFixed(2) %></data></td>
+            </tr>
+            <tr>
+              <th scope="row" <%- i18n('enroll.plan') %>><%= t('enroll.plan') %></th>
+              <td><output form="enroll-form" for="plan-self-paced plan-mentor" name="planSummary"><%= selected.name %></output></td>
+            </tr>
+            <tr>
+              <th scope="row" <%- i18n('enroll.discount') %>><%= t('enroll.discount') %></th>
+              <td><data value="0">–$0.00</data></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" <%- i18n('enroll.total') %>><%= t('enroll.total') %></th>
+              <td><output form="enroll-form" name="total">$<%= c.price.toFixed(2) %></output></td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p class="summary__note" <%- i18n('enroll.note') %>><%= t('enroll.note') %></p>
+      </aside>
+    </div>
+
+  </main>
+<%- include('../partials/footer') %>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-locale="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevPath — Learn in-demand IT skills</title>
+  <meta name="description" content="Hands-on IT courses in web development, data science, DevOps and design." />
+  <link rel="icon" type="image/svg+xml" href="./src/assets/favicon.svg" />
+</head>
+<body class="page page--home">
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
+  <header class="header">
+    <div class="header__inner container">
+      <a class="header__logo logo" href="./index.html" aria-label="DevPath — home page" data-i18n-attr="aria-label:header.logoLabel">
+        <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+        <span class="logo__text">DevPath</span>
+      </a>
+
+      <button class="header__burger burger" type="button"
+              aria-controls="main-nav" aria-expanded="false"
+              aria-label="Open menu" data-i18n-attr="aria-label:header.menuOpen">
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
+
+      <nav class="header__nav nav" id="main-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.label">
+        <ul class="nav__list">
+
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="./index.html" aria-current="page" data-i18n="nav.home">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./courses.html" data-i18n="nav.courses">Courses</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./course.html?id=1#instructor" data-i18n="nav.instructors">Instructors</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="#about" data-i18n="nav.about">About</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="button button--secondary header__login" type="button" data-i18n="header.login">Log in</button>
+        <a class="button button--primary header__signup" href="./enroll.html" data-i18n="header.signup">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="main" id="main" tabindex="-1">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <p class="hero__badge badge badge--accent">
+            <span aria-hidden="true">★</span> <span data-i18n="home.hero.badge">4.8 average rating from 18,000+ students</span>
+          </p>
+          <h1 class="hero__title" id="hero-title" data-i18n="home.hero.title">Learn in-demand IT skills from industry experts</h1>
+          <p class="hero__lead" data-i18n="home.hero.lead">Hands-on courses in web development, data science, DevOps and design. Learn at your own pace and build a portfolio that gets you hired.</p>
+
+          <form class="hero__search search-form" role="search" action="./courses.html" method="get">
+            <label class="search-form__label visually-hidden" for="hero-search" data-i18n="search.label">Search courses</label>
+            <input class="search-form__input input" id="hero-search" name="q" type="search"
+                   placeholder="Search courses, e.g. JavaScript" data-i18n-attr="placeholder:search.placeholderHome"
+                   autocomplete="off" />
+            <button class="search-form__button button button--primary" type="submit" data-i18n="search.submit">Find a course</button>
+          </form>
+
+          <dl class="hero__stats stats">
+            <div class="stats__item">
+              <dt class="stats__label" data-i18n="home.stats.courses">Courses</dt>
+              <dd class="stats__value">120+</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label" data-i18n="home.stats.instructors">Instructors</dt>
+              <dd class="stats__value">45</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label" data-i18n="home.stats.students">Students</dt>
+              <dd class="stats__value"><abbr title="18,000">18k</abbr></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero__visual">
+          <picture class="hero__picture">
+            <source media="(max-width: 767px)" type="image/webp"
+                    srcset="./src/assets/images/hero/hero-mobile-328.webp 328w, ./src/assets/images/hero/hero-mobile-656.webp 656w"
+                    sizes="calc(100vw - 32px)" />
+            <source media="(max-width: 767px)"
+                    srcset="./src/assets/images/hero/hero-mobile-328.jpg 328w, ./src/assets/images/hero/hero-mobile-656.jpg 656w"
+                    sizes="calc(100vw - 32px)" />
+            <source type="image/webp"
+                    srcset="./src/assets/images/hero/hero-desktop-564.webp 564w, ./src/assets/images/hero/hero-desktop-1128.webp 1128w"
+                    sizes="(min-width: 1280px) 564px, 50vw" />
+            <img class="hero__picture-img" src="./src/assets/images/hero/hero-desktop-564.jpg"
+                 srcset="./src/assets/images/hero/hero-desktop-564.jpg 564w, ./src/assets/images/hero/hero-desktop-1128.jpg 1128w"
+                 sizes="(min-width: 1280px) 564px, 50vw"
+                 width="564" height="440" fetchpriority="high"
+                 alt="Abstract illustration with code symbols on a purple gradient" data-i18n-attr="alt:home.hero.imageAlt" />
+          </picture>
+
+          <aside class="hero__progress progress-card" aria-labelledby="progress-card-title">
+            <p class="progress-card__eyebrow" data-i18n="home.progress.eyebrow">Continue learning</p>
+            <h2 class="progress-card__title" id="progress-card-title">Async JavaScript &amp; Promises</h2>
+            <progress class="progress-card__bar" max="100" value="68" aria-labelledby="progress-card-title">68%</progress>
+            <p class="progress-card__text">
+              <span data-i18n="home.progress.complete" data-i18n-args='{"value":68}'>68% complete</span>
+              <span aria-hidden="true">·</span>
+              <span data-i18n="home.progress.left" data-i18n-args='{"value":12}'>12 min left</span>
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories section" aria-labelledby="categories-title">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title" id="categories-title" data-i18n="home.categories.title">Browse by category</h2>
+          <a class="section__link link-arrow" href="./courses.html">
+            <span data-i18n="home.categories.all">View all categories</span> <span aria-hidden="true">→</span>
+          </a>
+        </header>
+        <ul class="categories__list" role="list">
+
+          <li class="categories__item">
+            <a class="category-card" href="./courses.html?category=web-development">
+              <span class="category-card__icon" aria-hidden="true">&lt;/&gt;</span>
+              <h3 class="category-card__name">Web Development</h3>
+              <p class="category-card__count">32 <span data-i18n="common.courses">courses</span></p>
+            </a>
+          </li>
+
+          <li class="categories__item">
+            <a class="category-card" href="./courses.html?category=data-science">
+              <span class="category-card__icon" aria-hidden="true">{ }</span>
+              <h3 class="category-card__name">Data Science</h3>
+              <p class="category-card__count">24 <span data-i18n="common.courses">courses</span></p>
+            </a>
+          </li>
+
+          <li class="categories__item">
+            <a class="category-card" href="./courses.html?category=devops-cloud">
+              <span class="category-card__icon" aria-hidden="true">&gt;_</span>
+              <h3 class="category-card__name">DevOps &amp; Cloud</h3>
+              <p class="category-card__count">18 <span data-i18n="common.courses">courses</span></p>
+            </a>
+          </li>
+
+          <li class="categories__item">
+            <a class="category-card" href="./courses.html?category=ui-ux-design">
+              <span class="category-card__icon" aria-hidden="true">Aa</span>
+              <h3 class="category-card__name">UI/UX Design</h3>
+              <p class="category-card__count">15 <span data-i18n="common.courses">courses</span></p>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <section class="popular section" aria-labelledby="popular-title">
+      <div class="container">
+        <header class="section__head">
+          <h2 class="section__title" id="popular-title" data-i18n="home.popular.title">Popular courses</h2>
+          <a class="section__link link-arrow" href="./courses.html">
+            <span data-i18n="home.popular.all">View all courses</span> <span aria-hidden="true">→</span>
+          </a>
+        </header>
+        <ul class="popular__list course-list" role="list">
+
+          <li class="course-list__item">
+            
+<article class="course-card" data-course-id="1" aria-labelledby="course-card-title-1">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./src/assets/images/courses/modern-javascript-400.webp 400w, ./src/assets/images/courses/modern-javascript-800.webp 800w" sizes="(min-width: 1280px) 368px, (min-width: 768px) 50vw, 100vw" />
+  <img class="course-card__thumb-img" src="./src/assets/images/courses/modern-javascript-400.jpg" srcset="./src/assets/images/courses/modern-javascript-400.jpg 400w, ./src/assets/images/courses/modern-javascript-800.jpg 800w" sizes="(min-width: 1280px) 368px, (min-width: 768px) 50vw, 100vw"
+       width="400" height="185" alt="JS course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">Web Development</p>
+    <h3 class="course-card__title" id="course-card-title-1">Modern JavaScript: From Basics to ES2025</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Anna Kovalenko</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">64 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT42H">42h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.8 out of 5">★★★★★</span>
+      <strong class="rating__value">4.8</strong>
+      <span class="rating__count">(1,240<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="49">$49</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=1" aria-describedby="course-card-title-1">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+          </li>
+
+          <li class="course-list__item">
+            
+<article class="course-card" data-course-id="2" aria-labelledby="course-card-title-2">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./src/assets/images/courses/react-nextjs-400.webp 400w, ./src/assets/images/courses/react-nextjs-800.webp 800w" sizes="(min-width: 1280px) 368px, (min-width: 768px) 50vw, 100vw" />
+  <img class="course-card__thumb-img" src="./src/assets/images/courses/react-nextjs-400.jpg" srcset="./src/assets/images/courses/react-nextjs-400.jpg 400w, ./src/assets/images/courses/react-nextjs-800.jpg 800w" sizes="(min-width: 1280px) 368px, (min-width: 768px) 50vw, 100vw"
+       width="400" height="185" alt="React course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">Web Development</p>
+    <h3 class="course-card__title" id="course-card-title-2">React &amp; Next.js: Build Production Apps</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Dmytro Shevchenko</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">78 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT51H">51h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.9 out of 5">★★★★★</span>
+      <strong class="rating__value">4.9</strong>
+      <span class="rating__count">(980<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="69">$69</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=2" aria-describedby="course-card-title-2">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+          </li>
+
+          <li class="course-list__item">
+            
+<article class="course-card" data-course-id="3" aria-labelledby="course-card-title-3">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./src/assets/images/courses/python-pandas-400.webp 400w, ./src/assets/images/courses/python-pandas-800.webp 800w" sizes="(min-width: 1280px) 368px, (min-width: 768px) 50vw, 100vw" />
+  <img class="course-card__thumb-img" src="./src/assets/images/courses/python-pandas-400.jpg" srcset="./src/assets/images/courses/python-pandas-400.jpg 400w, ./src/assets/images/courses/python-pandas-800.jpg 800w" sizes="(min-width: 1280px) 368px, (min-width: 768px) 50vw, 100vw"
+       width="400" height="185" alt="Py course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">Data Science</p>
+    <h3 class="course-card__title" id="course-card-title-3">Python for Data Analysis with Pandas</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Olena Bondar</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">52 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT36H">36h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.7 out of 5">★★★★★</span>
+      <strong class="rating__value">4.7</strong>
+      <span class="rating__count">(2,110<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="59">$59</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=3" aria-describedby="course-card-title-3">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta__banner">
+          <div class="cta__text">
+            <h2 class="cta__title" id="cta-title" data-i18n="home.cta.title">Not sure where to start?</h2>
+            <p class="cta__lead" data-i18n="home.cta.lead">Take a 2-minute quiz and get a personal learning path.</p>
+          </div>
+          <button class="cta__button button button--secondary" type="button" aria-haspopup="dialog" data-i18n="home.cta.button">Take the quiz</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="footer" id="about">
+    <div class="footer__inner container">
+      <div class="footer__top">
+        <section class="footer__brand" aria-labelledby="footer-about-title">
+          <a class="footer__logo logo logo--inverse" href="./index.html" aria-label="DevPath — home page" data-i18n-attr="aria-label:header.logoLabel">
+            <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+            <span class="logo__text">DevPath</span>
+          </a>
+          <h2 class="footer__about-title visually-hidden" id="footer-about-title" data-i18n="footer.aboutTitle">About DevPath</h2>
+          <p class="footer__text" data-i18n="footer.about">Practical IT courses from industry practitioners. Learn at your own pace, build real projects, get hired.</p>
+        </section>
+
+        <nav class="footer__nav" aria-label="Footer navigation" data-i18n-attr="aria-label:footer.navLabel">
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.courses">Courses</h2>
+            <ul class="footer__list">
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=web-development">Web Development</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=data-science">Data Science</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=devops-cloud">DevOps &amp; Cloud</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=ui-ux-design">UI/UX Design</a></li>
+
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.company">Company</h2>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="#about" data-i18n="footer.aboutUs">About us</a></li>
+              <li class="footer__item"><a class="footer__link" href="./course.html?id=1#instructor" data-i18n="nav.instructors">Instructors</a></li>
+              <li class="footer__item"><a class="footer__link" href="./courses.html" data-i18n="footer.allCourses">All courses</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html" data-i18n="footer.enroll">Enroll</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.support">Support</h2>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="mailto:support@devpath.example" data-i18n="footer.contact">Contact</a></li>
+              <li class="footer__item"><a class="footer__link" href="./course.html?id=1#guarantee" data-i18n="footer.guarantee">Money-back guarantee</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html#terms" data-i18n="footer.terms">Terms of service</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html#terms" data-i18n="footer.privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright"><small>© 2026 DevPath. All rights reserved.</small></p>
+        <p class="footer__locale">
+          <span class="footer__lang" data-i18n="footer.language">English</span>
+          <span aria-hidden="true">·</span>
+          <abbr class="footer__currency" title="US dollar" data-i18n-attr="title:footer.currencyTitle">USD</abbr>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
+

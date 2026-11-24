@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-locale="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern JavaScript: From Basics to ES2025 — DevPath</title>
+  <meta name="description" content="Master modern JavaScript and build 8 real-world projects for your portfolio." />
+  <link rel="icon" type="image/svg+xml" href="./src/assets/favicon.svg" />
+</head>
+<body class="page page--course">
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
+  <header class="header">
+    <div class="header__inner container">
+      <a class="header__logo logo" href="./index.html" aria-label="DevPath — home page" data-i18n-attr="aria-label:header.logoLabel">
+        <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+        <span class="logo__text">DevPath</span>
+      </a>
+
+      <button class="header__burger burger" type="button"
+              aria-controls="main-nav" aria-expanded="false"
+              aria-label="Open menu" data-i18n-attr="aria-label:header.menuOpen">
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
+
+      <nav class="header__nav nav" id="main-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.label">
+        <ul class="nav__list">
+
+          <li class="nav__item">
+            <a class="nav__link" href="./index.html" data-i18n="nav.home">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="./courses.html" data-i18n="nav.courses">Courses</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./course.html?id=1#instructor" data-i18n="nav.instructors">Instructors</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="#about" data-i18n="nav.about">About</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="button button--secondary header__login" type="button" data-i18n="header.login">Log in</button>
+        <a class="button button--primary header__signup" href="./enroll.html" data-i18n="header.signup">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <main class="main" id="main" tabindex="-1">
+
+        <article class="course" itemscope itemtype="https://schema.org/Course">
+      <meta itemprop="courseCode" content="DP-001" />
+      <meta itemprop="inLanguage" content="en" />
+      <meta itemprop="educationalLevel" content="Beginner" />
+
+      <section class="course-hero" aria-labelledby="course-title">
+        <div class="course-hero__inner container">
+          <div class="course-hero__info">
+            <nav class="breadcrumbs breadcrumbs--inverse" aria-label="Breadcrumbs" data-i18n-attr="aria-label:a11y.breadcrumbs">
+  <ol class="breadcrumbs__list">
+
+    <li class="breadcrumbs__item">
+
+      <a class="breadcrumbs__link" href="./index.html" data-i18n="nav.home">Home</a>
+      <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+
+    </li>
+
+    <li class="breadcrumbs__item">
+
+      <a class="breadcrumbs__link" href="./courses.html" data-i18n="nav.courses">Courses</a>
+      <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+
+    </li>
+
+    <li class="breadcrumbs__item">
+
+      <a class="breadcrumbs__link" href="./courses.html?category=web-development" >Web Development</a>
+      <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+
+    </li>
+
+    <li class="breadcrumbs__item">
+
+      <span class="breadcrumbs__current" aria-current="page" >Modern JavaScript</span>
+
+    </li>
+
+  </ol>
+</nav>
+
+            <p class="course-hero__badge badge badge--primary">Web Development</p>
+            <h1 class="course-hero__title" id="course-title" itemprop="name">Modern JavaScript: From Basics to ES2025</h1>
+            <p class="course-hero__lead" itemprop="description">Master the language of the web: from variables and functions to async code, modules and real-world APIs. Build 8 projects for your portfolio.</p>
+
+            <ul class="course-hero__meta meta" role="list">
+              <li class="meta__item meta__item--rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                <span aria-hidden="true">★</span>
+                <span itemprop="ratingValue">4.8</span><span class="visually-hidden"> out of 5</span>
+                <meta itemprop="bestRating" content="5" />
+                <meta itemprop="reviewCount" content="1240" />
+              </li>
+              <li class="meta__item">1,240 <span data-i18n="course.reviews">reviews</span></li>
+              <li class="meta__item">18,450 <span data-i18n="course.students">students</span></li>
+              <li class="meta__item"><span data-i18n="course.updated">Updated</span> <time datetime="2026-10" itemprop="dateModified">Oct 2026</time></li>
+              <li class="meta__item">English</li>
+            </ul>
+
+            <div class="course-hero__author author">
+              <span class="author__avatar" aria-hidden="true">AK</span>
+              <p class="author__text">
+                <span class="author__caption" data-i18n="course.createdBy">Created by</span>
+                <a class="author__name" href="#instructor">Anna Kovalenko</a>, Senior Frontend Engineer
+              </p>
+            </div>
+          </div>
+
+          <aside class="course-hero__purchase purchase" aria-labelledby="purchase-title"
+                 itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <h2 class="purchase__title visually-hidden" id="purchase-title" data-i18n="course.purchaseTitle">Buy this course</h2>
+            
+<picture class="purchase__preview">
+  <source type="image/webp" srcset="./src/assets/images/courses/modern-javascript-400.webp 400w, ./src/assets/images/courses/modern-javascript-800.webp 800w" sizes="(min-width: 1280px) 320px, calc(100vw - 80px)" />
+  <img class="purchase__preview-img" src="./src/assets/images/courses/modern-javascript-400.jpg" srcset="./src/assets/images/courses/modern-javascript-400.jpg 400w, ./src/assets/images/courses/modern-javascript-800.jpg 800w" sizes="(min-width: 1280px) 320px, calc(100vw - 80px)"
+       width="400" height="185" alt="Modern JavaScript course preview" fetchpriority="high" />
+</picture>
+
+            <p class="purchase__price price price--large">
+              <meta itemprop="priceCurrency" content="USD" />
+              <meta itemprop="category" content="Paid" />
+              <link itemprop="availability" href="https://schema.org/InStock" />
+              <data class="price__current" value="49" itemprop="price">$49</data>
+              <del class="price__old"><span class="visually-hidden" data-i18n="course.oldPrice">Old price: </span>$89</del>
+              <span class="price__badge badge badge--accent">45% <span data-i18n="course.off">off</span></span>
+            </p>
+            <a class="purchase__enroll button button--primary button--block" href="./enroll.html?course=1" data-i18n="course.enroll">Enroll now</a>
+            <button class="purchase__wishlist button button--secondary button--block" type="button" aria-pressed="false" data-i18n="course.wishlist">Add to wishlist</button>
+            <p class="purchase__guarantee" id="guarantee" data-i18n="course.guarantee">30-day money-back guarantee</p>
+            <hr class="purchase__divider" />
+            <h3 class="purchase__includes-title" data-i18n="course.includes">This course includes:</h3>
+            <ul class="purchase__includes checklist" role="list">
+              <li class="checklist__item">42 <span data-i18n="course.inc.video">hours of on-demand video</span></li>
+              <li class="checklist__item">120 <span data-i18n="course.inc.exercises">coding exercises</span></li>
+              <li class="checklist__item">8 <span data-i18n="course.inc.projects">real-world projects</span></li>
+              <li class="checklist__item" data-i18n="course.inc.certificate">Certificate of completion</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <div class="course__body container">
+        <div class="course__main">
+
+          <section class="course__section outcomes" aria-labelledby="outcomes-title">
+            <h2 class="outcomes__title" id="outcomes-title" data-i18n="course.learnTitle">What you&#39;ll learn</h2>
+            <ul class="outcomes__list checklist" role="list">
+
+              <li class="outcomes__item checklist__item" itemprop="teaches">Core syntax, types and operators</li>
+
+              <li class="outcomes__item checklist__item" itemprop="teaches">Functions, closures and scope</li>
+
+              <li class="outcomes__item checklist__item" itemprop="teaches">DOM manipulation and events</li>
+
+              <li class="outcomes__item checklist__item" itemprop="teaches">Async code: promises, async/await</li>
+
+              <li class="outcomes__item checklist__item" itemprop="teaches">ES modules and modern tooling</li>
+
+              <li class="outcomes__item checklist__item" itemprop="teaches">Working with REST APIs</li>
+
+            </ul>
+          </section>
+
+          <section class="course__section curriculum" aria-labelledby="curriculum-title">
+            <h2 class="curriculum__title" id="curriculum-title" data-i18n="course.contentTitle">Course content</h2>
+            <p class="curriculum__summary">
+              8 <span data-i18n="course.sections">sections</span> ·
+              64 <span data-i18n="card.lessons">lessons</span> ·
+              <time datetime="PT42H30M">42h 30m</time> <span data-i18n="course.totalLength">total length</span>
+            </p>
+            <ol class="curriculum__list" role="list">
+
+              <li class="curriculum__item">
+                <details class="module" itemprop="syllabusSections" itemscope itemtype="https://schema.org/Syllabus">
+                  <summary class="module__summary">
+                    <span class="module__number" aria-hidden="true">01</span>
+                    <span class="module__text">
+                      <span class="module__title" itemprop="name">Getting started</span>
+                      <span class="module__info">6 <span data-i18n="card.lessons">lessons</span> · <time datetime="PT45M" itemprop="timeRequired">45m</time></span>
+                    </span>
+                    <span class="module__toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <ul class="module__topics" itemprop="description">
+
+                    <li class="module__topic">How the web works</li>
+
+                    <li class="module__topic">Setting up VS Code and Node.js</li>
+
+                    <li class="module__topic">Your first script</li>
+
+                  </ul>
+                </details>
+              </li>
+
+              <li class="curriculum__item">
+                <details class="module" itemprop="syllabusSections" itemscope itemtype="https://schema.org/Syllabus">
+                  <summary class="module__summary">
+                    <span class="module__number" aria-hidden="true">02</span>
+                    <span class="module__text">
+                      <span class="module__title" itemprop="name">Core syntax &amp; types</span>
+                      <span class="module__info">9 <span data-i18n="card.lessons">lessons</span> · <time datetime="PT4H10M" itemprop="timeRequired">4h 10m</time></span>
+                    </span>
+                    <span class="module__toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <ul class="module__topics" itemprop="description">
+
+                    <li class="module__topic">Variables: let and const</li>
+
+                    <li class="module__topic">Primitive types and objects</li>
+
+                    <li class="module__topic">Operators and comparisons</li>
+
+                  </ul>
+                </details>
+              </li>
+
+              <li class="curriculum__item">
+                <details class="module" itemprop="syllabusSections" itemscope itemtype="https://schema.org/Syllabus">
+                  <summary class="module__summary">
+                    <span class="module__number" aria-hidden="true">03</span>
+                    <span class="module__text">
+                      <span class="module__title" itemprop="name">Functions &amp; closures</span>
+                      <span class="module__info">8 <span data-i18n="card.lessons">lessons</span> · <time datetime="PT5H20M" itemprop="timeRequired">5h 20m</time></span>
+                    </span>
+                    <span class="module__toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <ul class="module__topics" itemprop="description">
+
+                    <li class="module__topic">Function declarations and arrows</li>
+
+                    <li class="module__topic">Scope and hoisting</li>
+
+                    <li class="module__topic">Closures in practice</li>
+
+                  </ul>
+                </details>
+              </li>
+
+              <li class="curriculum__item">
+                <details class="module" itemprop="syllabusSections" itemscope itemtype="https://schema.org/Syllabus">
+                  <summary class="module__summary">
+                    <span class="module__number" aria-hidden="true">04</span>
+                    <span class="module__text">
+                      <span class="module__title" itemprop="name">Working with the DOM</span>
+                      <span class="module__info">10 <span data-i18n="card.lessons">lessons</span> · <time datetime="PT6H" itemprop="timeRequired">6h</time></span>
+                    </span>
+                    <span class="module__toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <ul class="module__topics" itemprop="description">
+
+                    <li class="module__topic">Selecting and creating elements</li>
+
+                    <li class="module__topic">Events and delegation</li>
+
+                    <li class="module__topic">Forms and validation</li>
+
+                  </ul>
+                </details>
+              </li>
+
+              <li class="curriculum__item">
+                <details class="module" itemprop="syllabusSections" itemscope itemtype="https://schema.org/Syllabus">
+                  <summary class="module__summary">
+                    <span class="module__number" aria-hidden="true">05</span>
+                    <span class="module__text">
+                      <span class="module__title" itemprop="name">Asynchronous JavaScript</span>
+                      <span class="module__info">9 <span data-i18n="card.lessons">lessons</span> · <time datetime="PT6H40M" itemprop="timeRequired">6h 40m</time></span>
+                    </span>
+                    <span class="module__toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <ul class="module__topics" itemprop="description">
+
+                    <li class="module__topic">The event loop</li>
+
+                    <li class="module__topic">Promises</li>
+
+                    <li class="module__topic">async / await and error handling</li>
+
+                  </ul>
+                </details>
+              </li>
+
+              <li class="curriculum__item">
+                <details class="module" itemprop="syllabusSections" itemscope itemtype="https://schema.org/Syllabus">
+                  <summary class="module__summary">
+                    <span class="module__number" aria-hidden="true">06</span>
+                    <span class="module__text">
+                      <span class="module__title" itemprop="name">Modules &amp; tooling</span>
+                      <span class="module__info">7 <span data-i18n="card.lessons">lessons</span> · <time datetime="PT4H30M" itemprop="timeRequired">4h 30m</time></span>
+                    </span>
+                    <span class="module__toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <ul class="module__topics" itemprop="description">
+
+                    <li class="module__topic">ES modules</li>
+
+                    <li class="module__topic">npm and Vite</li>
+
+                    <li class="module__topic">Linting with ESLint</li>
+
+                  </ul>
+                </details>
+              </li>
+
+              <li class="curriculum__item">
+                <details class="module" itemprop="syllabusSections" itemscope itemtype="https://schema.org/Syllabus">
+                  <summary class="module__summary">
+                    <span class="module__number" aria-hidden="true">07</span>
+                    <span class="module__text">
+                      <span class="module__title" itemprop="name">Working with REST APIs</span>
+                      <span class="module__info">8 <span data-i18n="card.lessons">lessons</span> · <time datetime="PT7H" itemprop="timeRequired">7h</time></span>
+                    </span>
+                    <span class="module__toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <ul class="module__topics" itemprop="description">
+
+                    <li class="module__topic">fetch and axios</li>
+
+                    <li class="module__topic">CRUD with json-server</li>
+
+                    <li class="module__topic">Loading and error states</li>
+
+                  </ul>
+                </details>
+              </li>
+
+              <li class="curriculum__item">
+                <details class="module" itemprop="syllabusSections" itemscope itemtype="https://schema.org/Syllabus">
+                  <summary class="module__summary">
+                    <span class="module__number" aria-hidden="true">08</span>
+                    <span class="module__text">
+                      <span class="module__title" itemprop="name">Final project</span>
+                      <span class="module__info">7 <span data-i18n="card.lessons">lessons</span> · <time datetime="PT8H5M" itemprop="timeRequired">8h 5m</time></span>
+                    </span>
+                    <span class="module__toggle" aria-hidden="true">+</span>
+                  </summary>
+                  <ul class="module__topics" itemprop="description">
+
+                    <li class="module__topic">Planning the app</li>
+
+                    <li class="module__topic">Building the UI</li>
+
+                    <li class="module__topic">Deploying to GitHub Pages</li>
+
+                  </ul>
+                </details>
+              </li>
+
+            </ol>
+          </section>
+
+          <section class="course__section instructor" id="instructor" aria-labelledby="instructor-title">
+            <h2 class="instructor__heading" id="instructor-title" data-i18n="course.instructorTitle">Your instructor</h2>
+            <article class="instructor__card" itemprop="instructor" itemscope itemtype="https://schema.org/Person">
+              
+<picture class="instructor__avatar">
+  <source type="image/webp" srcset="./src/assets/images/avatars/anna-kovalenko-80.webp 80w, ./src/assets/images/avatars/anna-kovalenko-160.webp 160w" sizes="72px" />
+  <img class="instructor__avatar-img" src="./src/assets/images/avatars/anna-kovalenko-80.jpg" srcset="./src/assets/images/avatars/anna-kovalenko-80.jpg 80w, ./src/assets/images/avatars/anna-kovalenko-160.jpg 160w" sizes="72px"
+       width="80" height="80" alt="Photo of Anna Kovalenko" loading="lazy" decoding="async" />
+</picture>
+
+              <div class="instructor__bio">
+                <h3 class="instructor__name" itemprop="name">Anna Kovalenko</h3>
+                <p class="instructor__role"><span itemprop="jobTitle">Senior Frontend Engineer</span> · 9 <span data-i18n="course.yearsExp">years of experience</span></p>
+                <p class="instructor__text" itemprop="description">Anna builds large-scale web apps and has taught more than 18,000 students. Her courses focus on practice: every module ends with a small project.</p>
+              </div>
+            </article>
+          </section>
+
+          <section class="course__section reviews" aria-labelledby="reviews-title">
+            <h2 class="reviews__title" id="reviews-title" data-i18n="course.reviewsTitle">Student reviews</h2>
+            <ul class="reviews__list" role="list">
+
+              <li class="reviews__item">
+                <article class="review" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                  <p class="review__rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                    <span class="rating__stars" role="img" aria-label="Rated 5 out of 5">★★★★★</span>
+                    <meta itemprop="ratingValue" content="5" />
+                    <meta itemprop="bestRating" content="5" />
+                  </p>
+                  <blockquote class="review__text" itemprop="reviewBody"><p>Clear explanations and lots of practice. After the async module everything finally clicked.</p></blockquote>
+                  <footer class="review__footer">
+                    <span class="review__author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Maksym R.</span></span>
+                    <span aria-hidden="true">·</span>
+                    <time class="review__date" datetime="2026-11-10" itemprop="datePublished">Nov 10, 2026</time>
+                  </footer>
+                </article>
+              </li>
+
+              <li class="reviews__item">
+                <article class="review" itemprop="review" itemscope itemtype="https://schema.org/Review">
+                  <p class="review__rating" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                    <span class="rating__stars" role="img" aria-label="Rated 5 out of 5">★★★★★</span>
+                    <meta itemprop="ratingValue" content="5" />
+                    <meta itemprop="bestRating" content="5" />
+                  </p>
+                  <blockquote class="review__text" itemprop="reviewBody"><p>Great structure and real projects. I used the final project in my portfolio and got my first job offer.</p></blockquote>
+                  <footer class="review__footer">
+                    <span class="review__author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name">Sofia L.</span></span>
+                    <span aria-hidden="true">·</span>
+                    <time class="review__date" datetime="2026-10-24" itemprop="datePublished">Oct 24, 2026</time>
+                  </footer>
+                </article>
+              </li>
+
+            </ul>
+          </section>
+        </div>
+
+        <aside class="course__related related" aria-labelledby="related-title">
+          <h2 class="related__title" id="related-title" data-i18n="course.relatedTitle">Related courses</h2>
+          <ul class="related__list course-list" role="list">
+
+            <li class="course-list__item">
+              
+<article class="course-card" data-course-id="2" aria-labelledby="course-card-title-2">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./src/assets/images/courses/react-nextjs-400.webp 400w, ./src/assets/images/courses/react-nextjs-800.webp 800w" sizes="(min-width: 1280px) 368px, 100vw" />
+  <img class="course-card__thumb-img" src="./src/assets/images/courses/react-nextjs-400.jpg" srcset="./src/assets/images/courses/react-nextjs-400.jpg 400w, ./src/assets/images/courses/react-nextjs-800.jpg 800w" sizes="(min-width: 1280px) 368px, 100vw"
+       width="400" height="185" alt="React course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">Web Development</p>
+    <h3 class="course-card__title" id="course-card-title-2">React &amp; Next.js: Build Production Apps</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Dmytro Shevchenko</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">78 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT51H">51h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.9 out of 5">★★★★★</span>
+      <strong class="rating__value">4.9</strong>
+      <span class="rating__count">(980<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="69">$69</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=2" aria-describedby="course-card-title-2">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+            </li>
+
+            <li class="course-list__item">
+              
+<article class="course-card" data-course-id="5" aria-labelledby="course-card-title-5">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./src/assets/images/courses/uiux-figma-400.webp 400w, ./src/assets/images/courses/uiux-figma-800.webp 800w" sizes="(min-width: 1280px) 368px, 100vw" />
+  <img class="course-card__thumb-img" src="./src/assets/images/courses/uiux-figma-400.jpg" srcset="./src/assets/images/courses/uiux-figma-400.jpg 400w, ./src/assets/images/courses/uiux-figma-800.jpg 800w" sizes="(min-width: 1280px) 368px, 100vw"
+       width="400" height="185" alt="UX course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">UI/UX Design</p>
+    <h3 class="course-card__title" id="course-card-title-5">UI/UX Design in Figma: Zero to Portfolio</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Iryna Kravets</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">46 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT30H">30h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.9 out of 5">★★★★★</span>
+      <strong class="rating__value">4.9</strong>
+      <span class="rating__count">(1,530<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="45">$45</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=5" aria-describedby="course-card-title-5">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+            </li>
+
+          </ul>
+        </aside>
+      </div>
+
+      <div hidden itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="DevPath" />
+      </div>
+      <div hidden itemprop="hasCourseInstance" itemscope itemtype="https://schema.org/CourseInstance">
+        <meta itemprop="courseMode" content="online" />
+        <meta itemprop="courseWorkload" content="PT42H" />
+      </div>
+    </article>
+
+  </main>
+  <footer class="footer" id="about">
+    <div class="footer__inner container">
+      <div class="footer__top">
+        <section class="footer__brand" aria-labelledby="footer-about-title">
+          <a class="footer__logo logo logo--inverse" href="./index.html" aria-label="DevPath — home page" data-i18n-attr="aria-label:header.logoLabel">
+            <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+            <span class="logo__text">DevPath</span>
+          </a>
+          <h2 class="footer__about-title visually-hidden" id="footer-about-title" data-i18n="footer.aboutTitle">About DevPath</h2>
+          <p class="footer__text" data-i18n="footer.about">Practical IT courses from industry practitioners. Learn at your own pace, build real projects, get hired.</p>
+        </section>
+
+        <nav class="footer__nav" aria-label="Footer navigation" data-i18n-attr="aria-label:footer.navLabel">
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.courses">Courses</h2>
+            <ul class="footer__list">
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=web-development">Web Development</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=data-science">Data Science</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=devops-cloud">DevOps &amp; Cloud</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=ui-ux-design">UI/UX Design</a></li>
+
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.company">Company</h2>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="#about" data-i18n="footer.aboutUs">About us</a></li>
+              <li class="footer__item"><a class="footer__link" href="./course.html?id=1#instructor" data-i18n="nav.instructors">Instructors</a></li>
+              <li class="footer__item"><a class="footer__link" href="./courses.html" data-i18n="footer.allCourses">All courses</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html" data-i18n="footer.enroll">Enroll</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.support">Support</h2>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="mailto:support@devpath.example" data-i18n="footer.contact">Contact</a></li>
+              <li class="footer__item"><a class="footer__link" href="./course.html?id=1#guarantee" data-i18n="footer.guarantee">Money-back guarantee</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html#terms" data-i18n="footer.terms">Terms of service</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html#terms" data-i18n="footer.privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright"><small>© 2026 DevPath. All rights reserved.</small></p>
+        <p class="footer__locale">
+          <span class="footer__lang" data-i18n="footer.language">English</span>
+          <span aria-hidden="true">·</span>
+          <abbr class="footer__currency" title="US dollar" data-i18n-attr="title:footer.currencyTitle">USD</abbr>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
+
