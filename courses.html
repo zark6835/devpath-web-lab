@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-locale="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All courses — DevPath</title>
+  <meta name="description" content="Browse 120+ hands-on IT courses taught by industry practitioners." />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon-BcPWVawt.svg" />
+  <script type="module" crossorigin src="./assets/main-svhqLhz3.js"></script>
+</head>
+<body class="page page--courses">
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
+  <header class="header">
+    <div class="header__inner container">
+      <a class="header__logo logo" href="./index.html" aria-label="DevPath — home page" data-i18n-attr="aria-label:header.logoLabel">
+        <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+        <span class="logo__text">DevPath</span>
+      </a>
+
+      <button class="header__burger burger" type="button"
+              aria-controls="main-nav" aria-expanded="false"
+              aria-label="Open menu" data-i18n-attr="aria-label:header.menuOpen">
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
+
+      <nav class="header__nav nav" id="main-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.label">
+        <ul class="nav__list">
+
+          <li class="nav__item">
+            <a class="nav__link" href="./index.html" data-i18n="nav.home">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="./courses.html" aria-current="page" data-i18n="nav.courses">Courses</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./course.html?id=1#instructor" data-i18n="nav.instructors">Instructors</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="#about" data-i18n="nav.about">About</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="button button--secondary header__login" type="button" data-i18n="header.login">Log in</button>
+        <a class="button button--primary header__signup" href="./enroll.html" data-i18n="header.signup">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="main" id="main" tabindex="-1">
+
+    <header class="page-head">
+      <div class="page-head__inner container">
+        <nav class="breadcrumbs " aria-label="Breadcrumbs" data-i18n-attr="aria-label:a11y.breadcrumbs">
+  <ol class="breadcrumbs__list">
+
+    <li class="breadcrumbs__item">
+
+      <a class="breadcrumbs__link" href="./index.html" data-i18n="nav.home">Home</a>
+      <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+
+    </li>
+
+    <li class="breadcrumbs__item">
+
+      <span class="breadcrumbs__current" aria-current="page" data-i18n="nav.courses">Courses</span>
+
+    </li>
+
+  </ol>
+</nav>
+
+        <h1 class="page-head__title" data-i18n="courses.title">All courses</h1>
+        <p class="page-head__lead" data-i18n="courses.lead">Choose from 120+ hands-on courses taught by industry practitioners.</p>
+      </div>
+    </header>
+
+    <div class="catalog container">
+
+      <aside class="catalog__filters filters" id="filters" aria-labelledby="filters-title">
+        <h2 class="filters__title" id="filters-title" data-i18n="filters.title">Filters</h2>
+        <form class="filters__form" action="./courses.html" method="get">
+          <fieldset class="filters__group">
+            <legend class="filters__legend" data-i18n="filters.category">Category</legend>
+
+            <div class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="category-web-development" name="category" value="web-development" checked />
+              <label class="checkbox__label" for="category-web-development">Web Development</label>
+            </div>
+
+            <div class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="category-data-science" name="category" value="data-science" />
+              <label class="checkbox__label" for="category-data-science">Data Science</label>
+            </div>
+
+            <div class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="category-devops-cloud" name="category" value="devops-cloud" />
+              <label class="checkbox__label" for="category-devops-cloud">DevOps &amp; Cloud</label>
+            </div>
+
+            <div class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="category-ui-ux-design" name="category" value="ui-ux-design" />
+              <label class="checkbox__label" for="category-ui-ux-design">UI/UX Design</label>
+            </div>
+
+            <div class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="category-cybersecurity" name="category" value="cybersecurity" />
+              <label class="checkbox__label" for="category-cybersecurity">Cybersecurity</label>
+            </div>
+
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend class="filters__legend" data-i18n="filters.level">Level</legend>
+            <div class="filters__chips">
+
+              <div class="chip">
+                <input class="chip__input" type="checkbox" id="level-beginner" name="level" value="beginner" checked />
+                <label class="chip__label" for="level-beginner" data-i18n="level.beginner">Beginner</label>
+              </div>
+
+              <div class="chip">
+                <input class="chip__input" type="checkbox" id="level-intermediate" name="level" value="intermediate" />
+                <label class="chip__label" for="level-intermediate" data-i18n="level.intermediate">Intermediate</label>
+              </div>
+
+              <div class="chip">
+                <input class="chip__input" type="checkbox" id="level-advanced" name="level" value="advanced" />
+                <label class="chip__label" for="level-advanced" data-i18n="level.advanced">Advanced</label>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend class="filters__legend" data-i18n="filters.price">Price</legend>
+
+            <div class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="price-free" name="price" value="free" />
+              <label class="checkbox__label" for="price-free" data-i18n="filters.free">Free</label>
+            </div>
+
+            <div class="checkbox">
+              <input class="checkbox__input" type="checkbox" id="price-paid" name="price" value="paid" checked />
+              <label class="checkbox__label" for="price-paid" data-i18n="filters.paid">Paid</label>
+            </div>
+
+          </fieldset>
+
+          <fieldset class="filters__group">
+            <legend class="filters__legend" data-i18n="filters.rating">Rating</legend>
+
+            <div class="radio">
+              <input class="radio__input" type="radio" id="rating-45" name="rating" value="4.5" checked />
+              <label class="radio__label" for="rating-45">
+                <span aria-hidden="true">★</span> 4.5 <span data-i18n="filters.andUp">&amp; up</span>
+              </label>
+            </div>
+
+            <div class="radio">
+              <input class="radio__input" type="radio" id="rating-40" name="rating" value="4.0" />
+              <label class="radio__label" for="rating-40">
+                <span aria-hidden="true">★</span> 4.0 <span data-i18n="filters.andUp">&amp; up</span>
+              </label>
+            </div>
+
+          </fieldset>
+
+          <div class="filters__actions">
+            <button class="filters__apply button button--primary" type="submit" data-i18n="filters.apply">Apply filters</button>
+            <button class="filters__reset button button--secondary" type="reset" data-i18n="filters.reset">Reset filters</button>
+          </div>
+        </form>
+      </aside>
+
+      <section class="catalog__results results" aria-labelledby="results-title">
+        <h2 class="results__title visually-hidden" id="results-title" data-i18n="courses.resultsTitle">Search results</h2>
+
+        <form class="results__toolbar toolbar" role="search" action="./courses.html" method="get">
+          <div class="toolbar__search">
+            <label class="toolbar__label visually-hidden" for="catalog-search" data-i18n="search.label">Search courses</label>
+            <input class="toolbar__input input" id="catalog-search" name="q" type="search"
+                   placeholder="Search courses" data-i18n-attr="placeholder:search.placeholder" />
+          </div>
+          <button class="toolbar__filters-toggle button button--secondary" type="button"
+                  aria-controls="filters" aria-expanded="false" data-i18n="filters.toggle">Filters</button>
+          <div class="toolbar__sort">
+            <label class="toolbar__label" for="catalog-sort" data-i18n="sort.label">Sort:</label>
+            <select class="toolbar__select select" id="catalog-sort" name="sort">
+
+              <option value="popular" selected data-i18n="sort.popular">Most popular</option>
+
+              <option value="rating" data-i18n="sort.rating">Highest rated</option>
+
+              <option value="newest" data-i18n="sort.newest">Newest</option>
+
+              <option value="price-asc" data-i18n="sort.price-asc">Price: low to high</option>
+
+              <option value="price-desc" data-i18n="sort.price-desc">Price: high to low</option>
+
+            </select>
+          </div>
+          <button class="toolbar__submit button button--primary" type="submit" data-i18n="search.short">Search</button>
+        </form>
+
+        <p class="results__count" role="status" aria-live="polite" data-i18n="courses.count" data-i18n-args='{"from":1,"to":6,"total":48}'>
+          Showing 1–6 of 48 courses
+        </p>
+
+        <ul class="results__list course-list course-list--grid" role="list">
+
+          <li class="course-list__item">
+            
+<article class="course-card" data-course-id="1" aria-labelledby="course-card-title-1">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./assets/modern-javascript-400-DUIxGEf5.webp 400w, ./assets/modern-javascript-800-CcC4VmhZ.webp 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw" />
+  <img class="course-card__thumb-img" src="./assets/modern-javascript-400-pJ68KhCU.jpg" srcset="./assets/modern-javascript-400-pJ68KhCU.jpg 400w, ./assets/modern-javascript-800-CqHn--ox.jpg 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw"
+       width="400" height="185" alt="JS course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">Web Development</p>
+    <h3 class="course-card__title" id="course-card-title-1">Modern JavaScript: From Basics to ES2025</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Anna Kovalenko</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">64 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT42H">42h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.8 out of 5">★★★★★</span>
+      <strong class="rating__value">4.8</strong>
+      <span class="rating__count">(1,240<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="49">$49</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=1" aria-describedby="course-card-title-1">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+          </li>
+
+          <li class="course-list__item">
+            
+<article class="course-card" data-course-id="2" aria-labelledby="course-card-title-2">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./assets/react-nextjs-400-CVcwr-s8.webp 400w, ./assets/react-nextjs-800-DOzIuV-0.webp 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw" />
+  <img class="course-card__thumb-img" src="./assets/react-nextjs-400-BSvDi0RY.jpg" srcset="./assets/react-nextjs-400-BSvDi0RY.jpg 400w, ./assets/react-nextjs-800-CQ9HFUxS.jpg 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw"
+       width="400" height="185" alt="React course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">Web Development</p>
+    <h3 class="course-card__title" id="course-card-title-2">React &amp; Next.js: Build Production Apps</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Dmytro Shevchenko</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">78 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT51H">51h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.9 out of 5">★★★★★</span>
+      <strong class="rating__value">4.9</strong>
+      <span class="rating__count">(980<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="69">$69</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=2" aria-describedby="course-card-title-2">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+          </li>
+
+          <li class="course-list__item">
+            
+<article class="course-card" data-course-id="3" aria-labelledby="course-card-title-3">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./assets/python-pandas-400-CzBznOu6.webp 400w, ./assets/python-pandas-800-DBdfaxU-.webp 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw" />
+  <img class="course-card__thumb-img" src="./assets/python-pandas-400-qBkK7WmR.jpg" srcset="./assets/python-pandas-400-qBkK7WmR.jpg 400w, ./assets/python-pandas-800-D1PSDi2r.jpg 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw"
+       width="400" height="185" alt="Py course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">Data Science</p>
+    <h3 class="course-card__title" id="course-card-title-3">Python for Data Analysis with Pandas</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Olena Bondar</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">52 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT36H">36h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.7 out of 5">★★★★★</span>
+      <strong class="rating__value">4.7</strong>
+      <span class="rating__count">(2,110<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="59">$59</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=3" aria-describedby="course-card-title-3">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+          </li>
+
+          <li class="course-list__item">
+            
+<article class="course-card" data-course-id="4" aria-labelledby="course-card-title-4">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./assets/docker-kubernetes-400-Z9lcXXNZ.webp 400w, ./assets/docker-kubernetes-800-aBR8p7SS.webp 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw" />
+  <img class="course-card__thumb-img" src="./assets/docker-kubernetes-400-DOFpd5To.jpg" srcset="./assets/docker-kubernetes-400-DOFpd5To.jpg 400w, ./assets/docker-kubernetes-800-BNQysA5-.jpg 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw"
+       width="400" height="185" alt="K8s course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">DevOps &amp; Cloud</p>
+    <h3 class="course-card__title" id="course-card-title-4">Docker &amp; Kubernetes for Developers</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Taras Melnyk</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">40 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT28H">28h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.8 out of 5">★★★★★</span>
+      <strong class="rating__value">4.8</strong>
+      <span class="rating__count">(640<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="79">$79</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=4" aria-describedby="course-card-title-4">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+          </li>
+
+          <li class="course-list__item">
+            
+<article class="course-card" data-course-id="5" aria-labelledby="course-card-title-5">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./assets/uiux-figma-400-C1xJVI2B.webp 400w, ./assets/uiux-figma-800-DTRoSVAk.webp 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw" />
+  <img class="course-card__thumb-img" src="./assets/uiux-figma-400-s-tpQvbv.jpg" srcset="./assets/uiux-figma-400-s-tpQvbv.jpg 400w, ./assets/uiux-figma-800-BvrdD8UL.jpg 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw"
+       width="400" height="185" alt="UX course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">UI/UX Design</p>
+    <h3 class="course-card__title" id="course-card-title-5">UI/UX Design in Figma: Zero to Portfolio</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Iryna Kravets</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">46 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT30H">30h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.9 out of 5">★★★★★</span>
+      <strong class="rating__value">4.9</strong>
+      <span class="rating__count">(1,530<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="45">$45</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=5" aria-describedby="course-card-title-5">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+          </li>
+
+          <li class="course-list__item">
+            
+<article class="course-card" data-course-id="6" aria-labelledby="course-card-title-6">
+  
+<picture class="course-card__thumb">
+  <source type="image/webp" srcset="./assets/sql-postgresql-400-CVeyAOCy.webp 400w, ./assets/sql-postgresql-800-BHtlO6WY.webp 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw" />
+  <img class="course-card__thumb-img" src="./assets/sql-postgresql-400-B_TbbnJq.jpg" srcset="./assets/sql-postgresql-400-B_TbbnJq.jpg 400w, ./assets/sql-postgresql-800-o1VRPi70.jpg 800w" sizes="(min-width: 1280px) 270px, (min-width: 768px) 50vw, 100vw"
+       width="400" height="185" alt="SQL course cover" loading="lazy" decoding="async" />
+</picture>
+
+  <div class="course-card__body">
+    <p class="course-card__tag tag">Data Science</p>
+    <h3 class="course-card__title" id="course-card-title-6">SQL &amp; Databases: PostgreSQL in Practice</h3>
+    <p class="course-card__meta">
+      <span class="course-card__author">Andrii Lysenko</span>
+      <span aria-hidden="true">·</span>
+      <span class="course-card__lessons">38 <span data-i18n="card.lessons">lessons</span></span>
+      <span aria-hidden="true">·</span>
+      <time class="course-card__duration" datetime="PT24H">24h</time>
+    </p>
+    <p class="course-card__rating rating">
+      <span class="rating__stars" role="img" aria-label="Rated 4.6 out of 5">★★★★★</span>
+      <strong class="rating__value">4.6</strong>
+      <span class="rating__count">(870<span class="visually-hidden"> reviews</span>)</span>
+    </p>
+    <div class="course-card__footer">
+      <p class="course-card__price price"><data value="0">Free</data></p>
+      <a class="course-card__link link-arrow" href="./course.html?id=6" aria-describedby="course-card-title-6">
+        <span data-i18n="card.details">View details</span> <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+          </li>
+
+        </ul>
+
+        <nav class="results__pagination pagination" aria-label="Pagination" data-i18n-attr="aria-label:pagination.label">
+          <ul class="pagination__list">
+            <li class="pagination__item">
+              <span class="pagination__link pagination__link--prev pagination__link--disabled" aria-disabled="true">
+                <span aria-hidden="true">‹</span> <span data-i18n="pagination.prev">Prev</span>
+              </span>
+            </li>
+            <li class="pagination__item"><a class="pagination__link pagination__link--active" href="./courses.html?page=1" aria-current="page" aria-label="Page 1">1</a></li>
+
+            <li class="pagination__item"><a class="pagination__link" href="./courses.html?page=2" aria-label="Page 2">2</a></li>
+
+            <li class="pagination__item"><a class="pagination__link" href="./courses.html?page=3" aria-label="Page 3">3</a></li>
+
+            <li class="pagination__item pagination__item--gap" aria-hidden="true">…</li>
+            <li class="pagination__item"><a class="pagination__link" href="./courses.html?page=8" aria-label="Page 8">8</a></li>
+            <li class="pagination__item">
+              <a class="pagination__link pagination__link--next" href="./courses.html?page=2" rel="next">
+                <span data-i18n="pagination.next">Next</span> <span aria-hidden="true">›</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+
+  </main>
+  <footer class="footer" id="about">
+    <div class="footer__inner container">
+      <div class="footer__top">
+        <section class="footer__brand" aria-labelledby="footer-about-title">
+          <a class="footer__logo logo logo--inverse" href="./index.html" aria-label="DevPath — home page" data-i18n-attr="aria-label:header.logoLabel">
+            <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+            <span class="logo__text">DevPath</span>
+          </a>
+          <h2 class="footer__about-title visually-hidden" id="footer-about-title" data-i18n="footer.aboutTitle">About DevPath</h2>
+          <p class="footer__text" data-i18n="footer.about">Practical IT courses from industry practitioners. Learn at your own pace, build real projects, get hired.</p>
+        </section>
+
+        <nav class="footer__nav" aria-label="Footer navigation" data-i18n-attr="aria-label:footer.navLabel">
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.courses">Courses</h2>
+            <ul class="footer__list">
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=web-development">Web Development</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=data-science">Data Science</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=devops-cloud">DevOps &amp; Cloud</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=ui-ux-design">UI/UX Design</a></li>
+
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.company">Company</h2>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="#about" data-i18n="footer.aboutUs">About us</a></li>
+              <li class="footer__item"><a class="footer__link" href="./course.html?id=1#instructor" data-i18n="nav.instructors">Instructors</a></li>
+              <li class="footer__item"><a class="footer__link" href="./courses.html" data-i18n="footer.allCourses">All courses</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html" data-i18n="footer.enroll">Enroll</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.support">Support</h2>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="mailto:support@devpath.example" data-i18n="footer.contact">Contact</a></li>
+              <li class="footer__item"><a class="footer__link" href="./course.html?id=1#guarantee" data-i18n="footer.guarantee">Money-back guarantee</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html#terms" data-i18n="footer.terms">Terms of service</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html#terms" data-i18n="footer.privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright"><small>© 2026 DevPath. All rights reserved.</small></p>
+        <p class="footer__locale">
+          <span class="footer__lang" data-i18n="footer.language">English</span>
+          <span aria-hidden="true">·</span>
+          <abbr class="footer__currency" title="US dollar" data-i18n-attr="title:footer.currencyTitle">USD</abbr>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

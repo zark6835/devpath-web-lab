@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" data-i18n-locale="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enroll in the course — DevPath</title>
+  <meta name="description" content="Enroll in a DevPath course. Demo checkout, no real payment." />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon-BcPWVawt.svg" />
+  <script type="module" crossorigin src="./assets/main-svhqLhz3.js"></script>
+</head>
+<body class="page page--enroll">
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
+  <header class="header">
+    <div class="header__inner container">
+      <a class="header__logo logo" href="./index.html" aria-label="DevPath — home page" data-i18n-attr="aria-label:header.logoLabel">
+        <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+        <span class="logo__text">DevPath</span>
+      </a>
+
+      <button class="header__burger burger" type="button"
+              aria-controls="main-nav" aria-expanded="false"
+              aria-label="Open menu" data-i18n-attr="aria-label:header.menuOpen">
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+        <span class="burger__line" aria-hidden="true"></span>
+      </button>
+
+      <nav class="header__nav nav" id="main-nav" aria-label="Main navigation" data-i18n-attr="aria-label:nav.label">
+        <ul class="nav__list">
+
+          <li class="nav__item">
+            <a class="nav__link" href="./index.html" data-i18n="nav.home">Home</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="./courses.html" data-i18n="nav.courses">Courses</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="./course.html?id=1#instructor" data-i18n="nav.instructors">Instructors</a>
+          </li>
+
+          <li class="nav__item">
+            <a class="nav__link" href="#about" data-i18n="nav.about">About</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="button button--secondary header__login" type="button" data-i18n="header.login">Log in</button>
+        <a class="button button--primary header__signup" href="./enroll.html" data-i18n="header.signup">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <main class="main" id="main" tabindex="-1">
+
+    <header class="page-head">
+      <div class="page-head__inner container">
+        <nav class="breadcrumbs " aria-label="Breadcrumbs" data-i18n-attr="aria-label:a11y.breadcrumbs">
+  <ol class="breadcrumbs__list">
+
+    <li class="breadcrumbs__item">
+
+      <a class="breadcrumbs__link" href="./index.html" data-i18n="nav.home">Home</a>
+      <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+
+    </li>
+
+    <li class="breadcrumbs__item">
+
+      <a class="breadcrumbs__link" href="./courses.html" data-i18n="nav.courses">Courses</a>
+      <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+
+    </li>
+
+    <li class="breadcrumbs__item">
+
+      <a class="breadcrumbs__link" href="./course.html?id=1" >Modern JavaScript</a>
+      <span class="breadcrumbs__sep" aria-hidden="true">/</span>
+
+    </li>
+
+    <li class="breadcrumbs__item">
+
+      <span class="breadcrumbs__current" aria-current="page" data-i18n="enroll.crumb">Enroll</span>
+
+    </li>
+
+  </ol>
+</nav>
+
+        <h1 class="page-head__title" data-i18n="enroll.title">Enroll in the course</h1>
+        <p class="page-head__lead" data-i18n="enroll.lead">Fill in your details and we will email you access to the course. No real payment is required.</p>
+
+        <h2 class="visually-hidden" data-i18n="enroll.stepsLabel">Enrollment progress</h2>
+        <ol class="page-head__steps steps">
+
+          <li class="steps__item steps__item--current" aria-current="step">
+            <span class="steps__number" aria-hidden="true">1</span>
+            <span class="steps__label" data-i18n="enroll.steps.details">Your details</span>
+          </li>
+
+          <li class="steps__item">
+            <span class="steps__number" aria-hidden="true">2</span>
+            <span class="steps__label" data-i18n="enroll.steps.plan">Plan</span>
+          </li>
+
+          <li class="steps__item">
+            <span class="steps__number" aria-hidden="true">3</span>
+            <span class="steps__label" data-i18n="enroll.steps.confirmation">Confirmation</span>
+          </li>
+
+        </ol>
+      </div>
+    </header>
+
+    <div class="enroll container">
+      <section class="enroll__form-wrap" aria-labelledby="enroll-form-title">
+        <h2 class="visually-hidden" id="enroll-form-title" data-i18n="enroll.formTitle">Enrollment form</h2>
+
+        <form class="enroll-form" id="enroll-form" action="./enroll.html" method="get" autocomplete="on">
+          <input type="hidden" name="course" value="1" />
+
+          <fieldset class="enroll-form__group">
+            <legend class="enroll-form__legend" data-i18n="enroll.personal">Personal information</legend>
+
+            <div class="enroll-form__row">
+              <div class="field">
+                <label class="field__label" for="first-name" data-i18n="enroll.firstName">First name</label>
+                <input class="field__input input" id="first-name" name="firstName" type="text"
+                       autocomplete="given-name" required placeholder="Anna" />
+              </div>
+              <div class="field">
+                <label class="field__label" for="last-name" data-i18n="enroll.lastName">Last name</label>
+                <input class="field__input input" id="last-name" name="lastName" type="text"
+                       autocomplete="family-name" required placeholder="Kovalenko" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="email" data-i18n="enroll.email">Email</label>
+              <input class="field__input input" id="email" name="email" type="email" autocomplete="email"
+                     required placeholder="you@example.com" aria-describedby="email-hint" />
+              <p class="field__hint" id="email-hint" data-i18n="enroll.emailHint">We will send the course access link to this address.</p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="phone" data-i18n="enroll.phone">Phone (optional)</label>
+              <input class="field__input input" id="phone" name="phone" type="tel" autocomplete="tel"
+                     inputmode="tel" pattern="\+?[0-9 ]{10,16}" placeholder="+380 XX XXX XX XX" />
+            </div>
+          </fieldset>
+
+          <fieldset class="enroll-form__group plans">
+            <legend class="enroll-form__legend" data-i18n="enroll.choosePlan">Choose a plan</legend>
+            <div class="plans__list">
+
+              <div class="plan-option">
+                <input class="plan-option__input" type="radio" id="plan-self-paced" name="plan" value="self-paced"
+                       aria-describedby="plan-self-paced-desc" checked required />
+                <label class="plan-option__label" for="plan-self-paced">
+                  <span class="plan-option__name" data-i18n="enroll.plans.self-paced">Self-paced</span>
+                  <data class="plan-option__price" value="49">$49</data>
+                </label>
+                <p class="plan-option__desc" id="plan-self-paced-desc" data-i18n="enroll.plans.self-pacedDesc">Full course access, exercises and certificate.</p>
+              </div>
+
+              <div class="plan-option">
+                <input class="plan-option__input" type="radio" id="plan-mentor" name="plan" value="mentor"
+                       aria-describedby="plan-mentor-desc" required />
+                <label class="plan-option__label" for="plan-mentor">
+                  <span class="plan-option__name" data-i18n="enroll.plans.mentor">With mentor</span>
+                  <data class="plan-option__price" value="129">$129</data>
+                </label>
+                <p class="plan-option__desc" id="plan-mentor-desc" data-i18n="enroll.plans.mentorDesc">Everything in Self-paced plus weekly code reviews.</p>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label class="field__label" for="promo" data-i18n="enroll.promo">Promo code (optional)</label>
+            <input class="field__input input" id="promo" name="promo" type="text" autocomplete="off"
+                   spellcheck="false" aria-describedby="promo-error" placeholder="SPRING2026" />
+            <p class="field__error" id="promo-error" role="alert" hidden data-i18n="enroll.promoError">This promo code has expired.</p>
+          </div>
+
+          <div class="checkbox enroll-form__terms">
+            <input class="checkbox__input" type="checkbox" id="terms" name="terms" value="accepted" required />
+            <label class="checkbox__label" for="terms" data-i18n="enroll.terms">I agree to the Terms of Service and Privacy Policy</label>
+          </div>
+
+          <div class="enroll-form__actions">
+            <button class="button button--primary" type="submit" data-i18n="enroll.submit">Confirm enrollment</button>
+            <a class="button button--secondary" href="./course.html?id=1" data-i18n="enroll.back">Back to course</a>
+          </div>
+        </form>
+      </section>
+
+      <aside class="enroll__summary summary" aria-labelledby="summary-title">
+        <h2 class="summary__title" id="summary-title" data-i18n="enroll.summary">Order summary</h2>
+
+        <figure class="summary__course">
+          
+<picture class="summary__thumb">
+  <source type="image/webp" srcset="./assets/modern-javascript-400-DUIxGEf5.webp 400w, ./assets/modern-javascript-800-CcC4VmhZ.webp 800w" sizes="64px" />
+  <img class="summary__thumb-img" src="./assets/modern-javascript-400-pJ68KhCU.jpg" srcset="./assets/modern-javascript-400-pJ68KhCU.jpg 400w, ./assets/modern-javascript-800-CqHn--ox.jpg 800w" sizes="64px"
+       width="400" height="185" alt="JS course cover" fetchpriority="high" />
+</picture>
+
+          <figcaption class="summary__caption">
+            <a class="summary__course-title" href="./course.html?id=1">Modern JavaScript: From Basics to ES2025</a>
+            <span class="summary__author">Anna Kovalenko</span>
+          </figcaption>
+        </figure>
+
+        <table class="summary__table">
+          <caption class="visually-hidden" data-i18n="enroll.summaryCaption">Price breakdown</caption>
+          <tbody>
+            <tr>
+              <th scope="row" data-i18n="enroll.coursePrice">Course price</th>
+              <td><data value="49">$49.00</data></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="enroll.plan">Plan</th>
+              <td><output form="enroll-form" for="plan-self-paced plan-mentor" name="planSummary">Self-paced</output></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="enroll.discount">Promo discount</th>
+              <td><data value="0">–$0.00</data></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" data-i18n="enroll.total">Total</th>
+              <td><output form="enroll-form" name="total">$49.00</output></td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p class="summary__note" data-i18n="enroll.note">Demo checkout: no real payment will be processed.</p>
+      </aside>
+    </div>
+
+  </main>
+  <footer class="footer" id="about">
+    <div class="footer__inner container">
+      <div class="footer__top">
+        <section class="footer__brand" aria-labelledby="footer-about-title">
+          <a class="footer__logo logo logo--inverse" href="./index.html" aria-label="DevPath — home page" data-i18n-attr="aria-label:header.logoLabel">
+            <span class="logo__mark" aria-hidden="true">&lt;/&gt;</span>
+            <span class="logo__text">DevPath</span>
+          </a>
+          <h2 class="footer__about-title visually-hidden" id="footer-about-title" data-i18n="footer.aboutTitle">About DevPath</h2>
+          <p class="footer__text" data-i18n="footer.about">Practical IT courses from industry practitioners. Learn at your own pace, build real projects, get hired.</p>
+        </section>
+
+        <nav class="footer__nav" aria-label="Footer navigation" data-i18n-attr="aria-label:footer.navLabel">
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.courses">Courses</h2>
+            <ul class="footer__list">
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=web-development">Web Development</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=data-science">Data Science</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=devops-cloud">DevOps &amp; Cloud</a></li>
+
+              <li class="footer__item"><a class="footer__link" href="./courses.html?category=ui-ux-design">UI/UX Design</a></li>
+
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.company">Company</h2>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="#about" data-i18n="footer.aboutUs">About us</a></li>
+              <li class="footer__item"><a class="footer__link" href="./course.html?id=1#instructor" data-i18n="nav.instructors">Instructors</a></li>
+              <li class="footer__item"><a class="footer__link" href="./courses.html" data-i18n="footer.allCourses">All courses</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html" data-i18n="footer.enroll">Enroll</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h2 class="footer__title" data-i18n="footer.support">Support</h2>
+            <ul class="footer__list">
+              <li class="footer__item"><a class="footer__link" href="mailto:support@devpath.example" data-i18n="footer.contact">Contact</a></li>
+              <li class="footer__item"><a class="footer__link" href="./course.html?id=1#guarantee" data-i18n="footer.guarantee">Money-back guarantee</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html#terms" data-i18n="footer.terms">Terms of service</a></li>
+              <li class="footer__item"><a class="footer__link" href="./enroll.html#terms" data-i18n="footer.privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright"><small>© 2026 DevPath. All rights reserved.</small></p>
+        <p class="footer__locale">
+          <span class="footer__lang" data-i18n="footer.language">English</span>
+          <span aria-hidden="true">·</span>
+          <abbr class="footer__currency" title="US dollar" data-i18n-attr="title:footer.currencyTitle">USD</abbr>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
