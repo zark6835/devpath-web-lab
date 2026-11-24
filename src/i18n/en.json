@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "home": {
+      "title": "DevPath — Learn in-demand IT skills",
+      "description": "Hands-on IT courses in web development, data science, DevOps and design."
+    },
+    "courses": {
+      "title": "All courses — DevPath",
+      "description": "Browse 120+ hands-on IT courses taught by industry practitioners."
+    },
+    "course": {
+      "title": "Modern JavaScript: From Basics to ES2025 — DevPath",
+      "description": "Master modern JavaScript and build 8 real-world projects for your portfolio."
+    },
+    "enroll": {
+      "title": "Enroll in the course — DevPath",
+      "description": "Enroll in a DevPath course. Demo checkout, no real payment."
+    }
+  },
+  "a11y": {
+    "skip": "Skip to main content",
+    "breadcrumbs": "Breadcrumbs"
+  },
+  "header": {
+    "logoLabel": "DevPath — home page",
+    "menuOpen": "Open menu",
+    "login": "Log in",
+    "signup": "Sign up"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "courses": "Courses",
+    "instructors": "Instructors",
+    "about": "About"
+  },
+  "footer": {
+    "aboutTitle": "About DevPath",
+    "about": "Practical IT courses from industry practitioners. Learn at your own pace, build real projects, get hired.",
+    "navLabel": "Footer navigation",
+    "courses": "Courses",
+    "company": "Company",
+    "aboutUs": "About us",
+    "allCourses": "All courses",
+    "enroll": "Enroll",
+    "support": "Support",
+    "contact": "Contact",
+    "guarantee": "Money-back guarantee",
+    "terms": "Terms of service",
+    "privacy": "Privacy policy",
+    "copyright": "© 2026 DevPath. All rights reserved.",
+    "language": "English",
+    "currencyTitle": "US dollar"
+  },
+  "common": {
+    "free": "Free",
+    "courses": "courses"
+  },
+  "card": {
+    "coverAlt": "{label} course cover",
+    "lessons": "lessons",
+    "ratingLabel": "Rated {value} out of 5",
+    "reviews": "reviews",
+    "details": "View details"
+  },
+  "home": {
+    "hero": {
+      "badge": "4.8 average rating from 18,000+ students",
+      "title": "Learn in-demand IT skills from industry experts",
+      "lead": "Hands-on courses in web development, data science, DevOps and design. Learn at your own pace and build a portfolio that gets you hired.",
+      "imageAlt": "Abstract illustration with code symbols on a purple gradient"
+    },
+    "stats": {
+      "courses": "Courses",
+      "instructors": "Instructors",
+      "students": "Students"
+    },
+    "progress": {
+      "eyebrow": "Continue learning",
+      "complete": "{value}% complete",
+      "left": "{value} min left"
+    },
+    "categories": {
+      "title": "Browse by category",
+      "all": "View all categories"
+    },
+    "popular": {
+      "title": "Popular courses",
+      "all": "View all courses"
+    },
+    "cta": {
+      "title": "Not sure where to start?",
+      "lead": "Take a 2-minute quiz and get a personal learning path.",
+      "button": "Take the quiz"
+    }
+  },
+  "search": {
+    "label": "Search courses",
+    "placeholderHome": "Search courses, e.g. JavaScript",
+    "placeholder": "Search courses",
+    "submit": "Find a course",
+    "short": "Search"
+  },
+  "courses": {
+    "title": "All courses",
+    "lead": "Choose from 120+ hands-on courses taught by industry practitioners.",
+    "resultsTitle": "Search results",
+    "count": "Showing {from}–{to} of {total} courses"
+  },
+  "filters": {
+    "title": "Filters",
+    "category": "Category",
+    "level": "Level",
+    "price": "Price",
+    "rating": "Rating",
+    "free": "Free",
+    "paid": "Paid",
+    "andUp": "& up",
+    "apply": "Apply filters",
+    "reset": "Reset filters",
+    "toggle": "Filters"
+  },
+  "level": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "sort": {
+    "label": "Sort:",
+    "popular": "Most popular",
+    "rating": "Highest rated",
+    "newest": "Newest",
+    "price-asc": "Price: low to high",
+    "price-desc": "Price: high to low"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "prev": "Prev",
+    "next": "Next",
+    "page": "Page"
+  },
+  "course": {
+    "outOf": "out of 5",
+    "reviews": "reviews",
+    "students": "students",
+    "updated": "Updated",
+    "createdBy": "Created by",
+    "purchaseTitle": "Buy this course",
+    "previewAlt": "Modern JavaScript course preview",
+    "oldPrice": "Old price:",
+    "off": "off",
+    "enroll": "Enroll now",
+    "wishlist": "Add to wishlist",
+    "guarantee": "30-day money-back guarantee",
+    "includes": "This course includes:",
+    "inc": {
+      "video": "hours of on-demand video",
+      "exercises": "coding exercises",
+      "projects": "real-world projects",
+      "certificate": "Certificate of completion"
+    },
+    "learnTitle": "What you'll learn",
+    "contentTitle": "Course content",
+    "sections": "sections",
+    "totalLength": "total length",
+    "instructorTitle": "Your instructor",
+    "instructorPhotoAlt": "Photo of {name}",
+    "yearsExp": "years of experience",
+    "reviewsTitle": "Student reviews",
+    "relatedTitle": "Related courses"
+  },
+  "enroll": {
+    "crumb": "Enroll",
+    "title": "Enroll in the course",
+    "lead": "Fill in your details and we will email you access to the course. No real payment is required.",
+    "stepsLabel": "Enrollment progress",
+    "steps": {
+      "details": "Your details",
+      "plan": "Plan",
+      "confirmation": "Confirmation"
+    },
+    "formTitle": "Enrollment form",
+    "personal": "Personal information",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "emailHint": "We will send the course access link to this address.",
+    "phone": "Phone (optional)",
+    "choosePlan": "Choose a plan",
+    "plans": {
+      "self-paced": "Self-paced",
+      "self-pacedDesc": "Full course access, exercises and certificate.",
+      "mentor": "With mentor",
+      "mentorDesc": "Everything in Self-paced plus weekly code reviews."
+    },
+    "promo": "Promo code (optional)",
+    "promoError": "This promo code has expired.",
+    "terms": "I agree to the Terms of Service and Privacy Policy",
+    "submit": "Confirm enrollment",
+    "back": "Back to course",
+    "summary": "Order summary",
+    "summaryCaption": "Price breakdown",
+    "coursePrice": "Course price",
+    "plan": "Plan",
+    "discount": "Promo discount",
+    "total": "Total",
+    "note": "Demo checkout: no real payment will be processed."
+  }
+}
